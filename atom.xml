@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://bugdeveloper.gitee.io/blog/"/>
+  <link href="http://bugdeveloper.gitee.io/"/>
   <updated>2018-05-14T15:07:05.000Z</updated>
-  <id>http://bugdeveloper.gitee.io/blog/</id>
+  <id>http://bugdeveloper.gitee.io/</id>
   
   <author>
     <name>Bug开发者</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>小程序利用Canvas绘制图片和竖排文字</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2018/05/14/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%A9%E7%94%A8Canvas%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87%E5%92%8C%E7%AB%96%E6%8E%92%E6%96%87%E5%AD%97/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2018/05/14/小程序利用Canvas绘制图片和竖排文字/</id>
+    <link href="http://bugdeveloper.gitee.io/2018/05/14/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%A9%E7%94%A8Canvas%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87%E5%92%8C%E7%AB%96%E6%8E%92%E6%96%87%E5%AD%97/"/>
+    <id>http://bugdeveloper.gitee.io/2018/05/14/小程序利用Canvas绘制图片和竖排文字/</id>
     <published>2018-05-14T13:53:44.000Z</published>
     <updated>2018-05-14T15:07:05.000Z</updated>
     
@@ -32,14 +32,14 @@
     </summary>
     
     
-      <category term="小程序, Canvas" scheme="http://bugdeveloper.gitee.io/blog/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-Canvas/"/>
+      <category term="小程序, Canvas" scheme="http://bugdeveloper.gitee.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F-Canvas/"/>
     
   </entry>
   
   <entry>
     <title>公众号推荐</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2018/02/07/%E5%85%AC%E4%BC%97%E5%8F%B7%E6%8E%A8%E8%8D%90/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2018/02/07/公众号推荐/</id>
+    <link href="http://bugdeveloper.gitee.io/2018/02/07/%E5%85%AC%E4%BC%97%E5%8F%B7%E6%8E%A8%E8%8D%90/"/>
+    <id>http://bugdeveloper.gitee.io/2018/02/07/公众号推荐/</id>
     <published>2018-02-07T13:44:35.000Z</published>
     <updated>2018-02-07T13:51:54.000Z</updated>
     
@@ -54,17 +54,17 @@
     
     </summary>
     
-      <category term="杂谈" scheme="http://bugdeveloper.gitee.io/blog/categories/%E6%9D%82%E8%B0%88/"/>
+      <category term="杂谈" scheme="http://bugdeveloper.gitee.io/categories/%E6%9D%82%E8%B0%88/"/>
     
     
-      <category term="公众号" scheme="http://bugdeveloper.gitee.io/blog/tags/%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
+      <category term="公众号" scheme="http://bugdeveloper.gitee.io/tags/%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
     
   </entry>
   
   <entry>
     <title>Swift关于!和?的Tip</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2018/02/06/Swift%E5%85%B3%E4%BA%8E%E8%A7%A3%E5%8C%85%E7%9A%84Tip/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2018/02/06/Swift关于解包的Tip/</id>
+    <link href="http://bugdeveloper.gitee.io/2018/02/06/Swift%E5%85%B3%E4%BA%8E%E8%A7%A3%E5%8C%85%E7%9A%84Tip/"/>
+    <id>http://bugdeveloper.gitee.io/2018/02/06/Swift关于解包的Tip/</id>
     <published>2018-02-06T13:45:07.000Z</published>
     <updated>2018-02-06T14:00:10.000Z</updated>
     
@@ -81,17 +81,17 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://bugdeveloper.gitee.io/blog/categories/iOS/"/>
+      <category term="iOS" scheme="http://bugdeveloper.gitee.io/categories/iOS/"/>
     
     
-      <category term="Swift" scheme="http://bugdeveloper.gitee.io/blog/tags/Swift/"/>
+      <category term="Swift" scheme="http://bugdeveloper.gitee.io/tags/Swift/"/>
     
   </entry>
   
   <entry>
     <title>Github源码索引</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2018/01/27/Github%E6%BA%90%E7%A0%81%E7%B4%A2%E5%BC%95/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2018/01/27/Github源码索引/</id>
+    <link href="http://bugdeveloper.gitee.io/2018/01/27/Github%E6%BA%90%E7%A0%81%E7%B4%A2%E5%BC%95/"/>
+    <id>http://bugdeveloper.gitee.io/2018/01/27/Github源码索引/</id>
     <published>2018-01-27T06:12:05.000Z</published>
     <updated>2018-02-03T07:46:46.000Z</updated>
     
@@ -105,17 +105,17 @@
     
     </summary>
     
-      <category term="源码" scheme="http://bugdeveloper.gitee.io/blog/categories/%E6%BA%90%E7%A0%81/"/>
+      <category term="源码" scheme="http://bugdeveloper.gitee.io/categories/%E6%BA%90%E7%A0%81/"/>
     
     
-      <category term="Github" scheme="http://bugdeveloper.gitee.io/blog/tags/Github/"/>
+      <category term="Github" scheme="http://bugdeveloper.gitee.io/tags/Github/"/>
     
   </entry>
   
   <entry>
     <title>Github源码推荐(1.22~1.28)</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2018/01/27/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.22-1.28)/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2018/01/27/Github源码推荐(1.22-1.28)/</id>
+    <link href="http://bugdeveloper.gitee.io/2018/01/27/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.22-1.28)/"/>
+    <id>http://bugdeveloper.gitee.io/2018/01/27/Github源码推荐(1.22-1.28)/</id>
     <published>2018-01-27T04:39:11.000Z</published>
     <updated>2018-02-03T07:50:22.000Z</updated>
     
@@ -131,17 +131,17 @@
     
     </summary>
     
-      <category term="源码" scheme="http://bugdeveloper.gitee.io/blog/categories/%E6%BA%90%E7%A0%81/"/>
+      <category term="源码" scheme="http://bugdeveloper.gitee.io/categories/%E6%BA%90%E7%A0%81/"/>
     
     
-      <category term="Github" scheme="http://bugdeveloper.gitee.io/blog/tags/Github/"/>
+      <category term="Github" scheme="http://bugdeveloper.gitee.io/tags/Github/"/>
     
   </entry>
   
   <entry>
     <title>Github源码推荐(1.15~1.21)</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2018/01/21/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.15~1.21)/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2018/01/21/Github源码推荐(1.15~1.21)/</id>
+    <link href="http://bugdeveloper.gitee.io/2018/01/21/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.15~1.21)/"/>
+    <id>http://bugdeveloper.gitee.io/2018/01/21/Github源码推荐(1.15~1.21)/</id>
     <published>2018-01-21T03:21:06.000Z</published>
     <updated>2018-02-03T07:50:13.000Z</updated>
     
@@ -161,17 +161,17 @@
     
     </summary>
     
-      <category term="源码" scheme="http://bugdeveloper.gitee.io/blog/categories/%E6%BA%90%E7%A0%81/"/>
+      <category term="源码" scheme="http://bugdeveloper.gitee.io/categories/%E6%BA%90%E7%A0%81/"/>
     
     
-      <category term="Github" scheme="http://bugdeveloper.gitee.io/blog/tags/Github/"/>
+      <category term="Github" scheme="http://bugdeveloper.gitee.io/tags/Github/"/>
     
   </entry>
   
   <entry>
     <title>Github源码推荐(1.8~1.14)</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2018/01/14/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.8~1.14)/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2018/01/14/Github源码推荐(1.8~1.14)/</id>
+    <link href="http://bugdeveloper.gitee.io/2018/01/14/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.8~1.14)/"/>
+    <id>http://bugdeveloper.gitee.io/2018/01/14/Github源码推荐(1.8~1.14)/</id>
     <published>2018-01-14T14:22:30.000Z</published>
     <updated>2018-02-03T07:50:18.000Z</updated>
     
@@ -197,17 +197,17 @@
     
     </summary>
     
-      <category term="源码" scheme="http://bugdeveloper.gitee.io/blog/categories/%E6%BA%90%E7%A0%81/"/>
+      <category term="源码" scheme="http://bugdeveloper.gitee.io/categories/%E6%BA%90%E7%A0%81/"/>
     
     
-      <category term="Github" scheme="http://bugdeveloper.gitee.io/blog/tags/Github/"/>
+      <category term="Github" scheme="http://bugdeveloper.gitee.io/tags/Github/"/>
     
   </entry>
   
   <entry>
     <title>CocoaPods设置target支持的swift版本 </title>
-    <link href="http://bugdeveloper.gitee.io/blog/2017/11/24/CocoaPods%E8%AE%BE%E7%BD%AEtarget%E6%94%AF%E6%8C%81%E7%9A%84swift%E7%89%88%E6%9C%AC/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2017/11/24/CocoaPods设置target支持的swift版本/</id>
+    <link href="http://bugdeveloper.gitee.io/2017/11/24/CocoaPods%E8%AE%BE%E7%BD%AEtarget%E6%94%AF%E6%8C%81%E7%9A%84swift%E7%89%88%E6%9C%AC/"/>
+    <id>http://bugdeveloper.gitee.io/2017/11/24/CocoaPods设置target支持的swift版本/</id>
     <published>2017-11-24T00:50:33.000Z</published>
     <updated>2018-02-03T07:46:03.000Z</updated>
     
@@ -219,19 +219,19 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://bugdeveloper.gitee.io/blog/categories/iOS/"/>
+      <category term="iOS" scheme="http://bugdeveloper.gitee.io/categories/iOS/"/>
     
     
-      <category term="Swift4" scheme="http://bugdeveloper.gitee.io/blog/tags/Swift4/"/>
+      <category term="Swift4" scheme="http://bugdeveloper.gitee.io/tags/Swift4/"/>
     
-      <category term="CocoaPods" scheme="http://bugdeveloper.gitee.io/blog/tags/CocoaPods/"/>
+      <category term="CocoaPods" scheme="http://bugdeveloper.gitee.io/tags/CocoaPods/"/>
     
   </entry>
   
   <entry>
     <title>Xcode9下自动化编译错误</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2017/11/09/Xcode9%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2017/11/09/Xcode9下自动化编译错误/</id>
+    <link href="http://bugdeveloper.gitee.io/2017/11/09/Xcode9%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/"/>
+    <id>http://bugdeveloper.gitee.io/2017/11/09/Xcode9下自动化编译错误/</id>
     <published>2017-11-09T14:03:20.000Z</published>
     <updated>2018-02-03T07:48:21.000Z</updated>
     
@@ -243,23 +243,23 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://bugdeveloper.gitee.io/blog/categories/iOS/"/>
+      <category term="iOS" scheme="http://bugdeveloper.gitee.io/categories/iOS/"/>
     
     
-      <category term="自动打包" scheme="http://bugdeveloper.gitee.io/blog/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
+      <category term="自动打包" scheme="http://bugdeveloper.gitee.io/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
     
-      <category term="xcodebuild" scheme="http://bugdeveloper.gitee.io/blog/tags/xcodebuild/"/>
+      <category term="xcodebuild" scheme="http://bugdeveloper.gitee.io/tags/xcodebuild/"/>
     
-      <category term="Jenkins" scheme="http://bugdeveloper.gitee.io/blog/tags/Jenkins/"/>
+      <category term="Jenkins" scheme="http://bugdeveloper.gitee.io/tags/Jenkins/"/>
     
-      <category term="Xcode9" scheme="http://bugdeveloper.gitee.io/blog/tags/Xcode9/"/>
+      <category term="Xcode9" scheme="http://bugdeveloper.gitee.io/tags/Xcode9/"/>
     
   </entry>
   
   <entry>
     <title>Swift4.0引用3.0第三方库</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2017/10/21/Swift4.0%E5%BC%95%E7%94%A83.0%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2017/10/21/Swift4.0引用3.0第三方库/</id>
+    <link href="http://bugdeveloper.gitee.io/2017/10/21/Swift4.0%E5%BC%95%E7%94%A83.0%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"/>
+    <id>http://bugdeveloper.gitee.io/2017/10/21/Swift4.0引用3.0第三方库/</id>
     <published>2017-10-21T15:56:21.000Z</published>
     <updated>2018-02-03T07:47:58.000Z</updated>
     
@@ -271,19 +271,19 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://bugdeveloper.gitee.io/blog/categories/iOS/"/>
+      <category term="iOS" scheme="http://bugdeveloper.gitee.io/categories/iOS/"/>
     
     
-      <category term="Swift4" scheme="http://bugdeveloper.gitee.io/blog/tags/Swift4/"/>
+      <category term="Swift4" scheme="http://bugdeveloper.gitee.io/tags/Swift4/"/>
     
-      <category term="iOS" scheme="http://bugdeveloper.gitee.io/blog/tags/iOS/"/>
+      <category term="iOS" scheme="http://bugdeveloper.gitee.io/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>iOS下更改系统音量</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2017/09/30/iOS%E4%B8%8B%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E9%9F%B3%E9%87%8F/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2017/09/30/iOS下更改系统音量/</id>
+    <link href="http://bugdeveloper.gitee.io/2017/09/30/iOS%E4%B8%8B%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E9%9F%B3%E9%87%8F/"/>
+    <id>http://bugdeveloper.gitee.io/2017/09/30/iOS下更改系统音量/</id>
     <published>2017-09-30T13:29:38.000Z</published>
     <updated>2018-02-03T07:48:28.000Z</updated>
     
@@ -298,19 +298,19 @@
     
     </summary>
     
-      <category term="小飞鱼" scheme="http://bugdeveloper.gitee.io/blog/categories/%E5%B0%8F%E9%A3%9E%E9%B1%BC/"/>
+      <category term="小飞鱼" scheme="http://bugdeveloper.gitee.io/categories/%E5%B0%8F%E9%A3%9E%E9%B1%BC/"/>
     
     
-      <category term="音量" scheme="http://bugdeveloper.gitee.io/blog/tags/%E9%9F%B3%E9%87%8F/"/>
+      <category term="音量" scheme="http://bugdeveloper.gitee.io/tags/%E9%9F%B3%E9%87%8F/"/>
     
-      <category term="MPVolumeView" scheme="http://bugdeveloper.gitee.io/blog/tags/MPVolumeView/"/>
+      <category term="MPVolumeView" scheme="http://bugdeveloper.gitee.io/tags/MPVolumeView/"/>
     
   </entry>
   
   <entry>
     <title>iOS拨打电话对话框问题解决</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2017/09/28/iOS%E6%8B%A8%E6%89%93%E7%94%B5%E8%AF%9D%E5%AF%B9%E8%AF%9D%E6%A1%86%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2017/09/28/iOS拨打电话对话框问题解决/</id>
+    <link href="http://bugdeveloper.gitee.io/2017/09/28/iOS%E6%8B%A8%E6%89%93%E7%94%B5%E8%AF%9D%E5%AF%B9%E8%AF%9D%E6%A1%86%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    <id>http://bugdeveloper.gitee.io/2017/09/28/iOS拨打电话对话框问题解决/</id>
     <published>2017-09-28T14:14:20.000Z</published>
     <updated>2018-02-03T07:47:13.000Z</updated>
     
@@ -322,21 +322,21 @@
     
     </summary>
     
-      <category term="小飞鱼" scheme="http://bugdeveloper.gitee.io/blog/categories/%E5%B0%8F%E9%A3%9E%E9%B1%BC/"/>
+      <category term="小飞鱼" scheme="http://bugdeveloper.gitee.io/categories/%E5%B0%8F%E9%A3%9E%E9%B1%BC/"/>
     
     
-      <category term="打电话" scheme="http://bugdeveloper.gitee.io/blog/tags/%E6%89%93%E7%94%B5%E8%AF%9D/"/>
+      <category term="打电话" scheme="http://bugdeveloper.gitee.io/tags/%E6%89%93%E7%94%B5%E8%AF%9D/"/>
     
-      <category term="蓝牙" scheme="http://bugdeveloper.gitee.io/blog/tags/%E8%93%9D%E7%89%99/"/>
+      <category term="蓝牙" scheme="http://bugdeveloper.gitee.io/tags/%E8%93%9D%E7%89%99/"/>
     
-      <category term="PBAP" scheme="http://bugdeveloper.gitee.io/blog/tags/PBAP/"/>
+      <category term="PBAP" scheme="http://bugdeveloper.gitee.io/tags/PBAP/"/>
     
   </entry>
   
   <entry>
     <title>小飞鱼项目有感</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2017/09/27/%E5%B0%8F%E9%A3%9E%E9%B1%BC%E9%A1%B9%E7%9B%AE%E6%9C%89%E6%84%9F/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2017/09/27/小飞鱼项目有感/</id>
+    <link href="http://bugdeveloper.gitee.io/2017/09/27/%E5%B0%8F%E9%A3%9E%E9%B1%BC%E9%A1%B9%E7%9B%AE%E6%9C%89%E6%84%9F/"/>
+    <id>http://bugdeveloper.gitee.io/2017/09/27/小飞鱼项目有感/</id>
     <published>2017-09-27T15:36:00.000Z</published>
     <updated>2018-02-03T07:45:39.000Z</updated>
     
@@ -351,19 +351,19 @@
     
     </summary>
     
-      <category term="小飞鱼" scheme="http://bugdeveloper.gitee.io/blog/categories/%E5%B0%8F%E9%A3%9E%E9%B1%BC/"/>
+      <category term="小飞鱼" scheme="http://bugdeveloper.gitee.io/categories/%E5%B0%8F%E9%A3%9E%E9%B1%BC/"/>
     
     
-      <category term="电话" scheme="http://bugdeveloper.gitee.io/blog/tags/%E7%94%B5%E8%AF%9D/"/>
+      <category term="电话" scheme="http://bugdeveloper.gitee.io/tags/%E7%94%B5%E8%AF%9D/"/>
     
-      <category term="小飞鱼" scheme="http://bugdeveloper.gitee.io/blog/tags/%E5%B0%8F%E9%A3%9E%E9%B1%BC/"/>
+      <category term="小飞鱼" scheme="http://bugdeveloper.gitee.io/tags/%E5%B0%8F%E9%A3%9E%E9%B1%BC/"/>
     
   </entry>
   
   <entry>
     <title>iOS下日志记录</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2017/09/24/iOS%E4%B8%8B%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2017/09/24/iOS下日志记录/</id>
+    <link href="http://bugdeveloper.gitee.io/2017/09/24/iOS%E4%B8%8B%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/"/>
+    <id>http://bugdeveloper.gitee.io/2017/09/24/iOS下日志记录/</id>
     <published>2017-09-24T00:22:30.000Z</published>
     <updated>2018-01-12T13:37:44.000Z</updated>
     
@@ -378,17 +378,17 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://bugdeveloper.gitee.io/blog/categories/iOS/"/>
+      <category term="iOS" scheme="http://bugdeveloper.gitee.io/categories/iOS/"/>
     
     
-      <category term="Log" scheme="http://bugdeveloper.gitee.io/blog/tags/Log/"/>
+      <category term="Log" scheme="http://bugdeveloper.gitee.io/tags/Log/"/>
     
   </entry>
   
   <entry>
     <title>开源协议知多少</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2016/12/30/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE%E7%9F%A5%E5%A4%9A%E5%B0%91/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2016/12/30/开源协议知多少/</id>
+    <link href="http://bugdeveloper.gitee.io/2016/12/30/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE%E7%9F%A5%E5%A4%9A%E5%B0%91/"/>
+    <id>http://bugdeveloper.gitee.io/2016/12/30/开源协议知多少/</id>
     <published>2016-12-30T15:20:28.000Z</published>
     <updated>2018-02-03T07:45:42.000Z</updated>
     
@@ -400,17 +400,17 @@
     
     </summary>
     
-      <category term="杂谈" scheme="http://bugdeveloper.gitee.io/blog/categories/%E6%9D%82%E8%B0%88/"/>
+      <category term="杂谈" scheme="http://bugdeveloper.gitee.io/categories/%E6%9D%82%E8%B0%88/"/>
     
     
-      <category term="开源协议" scheme="http://bugdeveloper.gitee.io/blog/tags/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE/"/>
+      <category term="开源协议" scheme="http://bugdeveloper.gitee.io/tags/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE/"/>
     
   </entry>
   
   <entry>
     <title>iOS 高性能异构滚动视图-LazyScrollView实现</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2016/12/08/iOS-%E9%AB%98%E6%80%A7%E8%83%BD%E5%BC%82%E6%9E%84%E6%BB%9A%E5%8A%A8%E8%A7%86%E5%9B%BE-LazyScrollView%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2016/12/08/iOS-高性能异构滚动视图-LazyScrollView实现/</id>
+    <link href="http://bugdeveloper.gitee.io/2016/12/08/iOS-%E9%AB%98%E6%80%A7%E8%83%BD%E5%BC%82%E6%9E%84%E6%BB%9A%E5%8A%A8%E8%A7%86%E5%9B%BE-LazyScrollView%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://bugdeveloper.gitee.io/2016/12/08/iOS-高性能异构滚动视图-LazyScrollView实现/</id>
     <published>2016-12-08T12:08:14.000Z</published>
     <updated>2018-01-12T13:37:44.000Z</updated>
     
@@ -428,19 +428,19 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://bugdeveloper.gitee.io/blog/categories/iOS/"/>
+      <category term="iOS" scheme="http://bugdeveloper.gitee.io/categories/iOS/"/>
     
     
-      <category term="LazyScrollView" scheme="http://bugdeveloper.gitee.io/blog/tags/LazyScrollView/"/>
+      <category term="LazyScrollView" scheme="http://bugdeveloper.gitee.io/tags/LazyScrollView/"/>
     
-      <category term="高性能" scheme="http://bugdeveloper.gitee.io/blog/tags/%E9%AB%98%E6%80%A7%E8%83%BD/"/>
+      <category term="高性能" scheme="http://bugdeveloper.gitee.io/tags/%E9%AB%98%E6%80%A7%E8%83%BD/"/>
     
   </entry>
   
   <entry>
     <title>iOS创建单例</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2016/11/01/iOS%E5%88%9B%E5%BB%BA%E5%8D%95%E4%BE%8B/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2016/11/01/iOS创建单例/</id>
+    <link href="http://bugdeveloper.gitee.io/2016/11/01/iOS%E5%88%9B%E5%BB%BA%E5%8D%95%E4%BE%8B/"/>
+    <id>http://bugdeveloper.gitee.io/2016/11/01/iOS创建单例/</id>
     <published>2016-11-01T12:01:31.000Z</published>
     <updated>2018-02-03T07:48:28.000Z</updated>
     
@@ -453,17 +453,17 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://bugdeveloper.gitee.io/blog/categories/iOS/"/>
+      <category term="iOS" scheme="http://bugdeveloper.gitee.io/categories/iOS/"/>
     
     
-      <category term="单例" scheme="http://bugdeveloper.gitee.io/blog/tags/%E5%8D%95%E4%BE%8B/"/>
+      <category term="单例" scheme="http://bugdeveloper.gitee.io/tags/%E5%8D%95%E4%BE%8B/"/>
     
   </entry>
   
   <entry>
     <title>iOS10下使用AutoLayout动画失效解决</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2016/11/01/iOS10%E4%B8%8B%E4%BD%BF%E7%94%A8AutoLayout%E5%8A%A8%E7%94%BB%E5%A4%B1%E6%95%88%E8%A7%A3%E5%86%B3/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2016/11/01/iOS10下使用AutoLayout动画失效解决/</id>
+    <link href="http://bugdeveloper.gitee.io/2016/11/01/iOS10%E4%B8%8B%E4%BD%BF%E7%94%A8AutoLayout%E5%8A%A8%E7%94%BB%E5%A4%B1%E6%95%88%E8%A7%A3%E5%86%B3/"/>
+    <id>http://bugdeveloper.gitee.io/2016/11/01/iOS10下使用AutoLayout动画失效解决/</id>
     <published>2016-11-01T11:57:31.000Z</published>
     <updated>2018-02-03T07:47:43.000Z</updated>
     
@@ -475,19 +475,19 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://bugdeveloper.gitee.io/blog/categories/iOS/"/>
+      <category term="iOS" scheme="http://bugdeveloper.gitee.io/categories/iOS/"/>
     
     
-      <category term="AutoLayout" scheme="http://bugdeveloper.gitee.io/blog/tags/AutoLayout/"/>
+      <category term="AutoLayout" scheme="http://bugdeveloper.gitee.io/tags/AutoLayout/"/>
     
-      <category term="iOS10" scheme="http://bugdeveloper.gitee.io/blog/tags/iOS10/"/>
+      <category term="iOS10" scheme="http://bugdeveloper.gitee.io/tags/iOS10/"/>
     
   </entry>
   
   <entry>
     <title>Xcode多Target设置</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2016/10/01/Xcode%E5%A4%9ATarget%E8%AE%BE%E7%BD%AE/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2016/10/01/Xcode多Target设置/</id>
+    <link href="http://bugdeveloper.gitee.io/2016/10/01/Xcode%E5%A4%9ATarget%E8%AE%BE%E7%BD%AE/"/>
+    <id>http://bugdeveloper.gitee.io/2016/10/01/Xcode多Target设置/</id>
     <published>2016-10-01T14:32:11.000Z</published>
     <updated>2018-01-12T13:37:44.000Z</updated>
     
@@ -500,19 +500,19 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://bugdeveloper.gitee.io/blog/categories/iOS/"/>
+      <category term="iOS" scheme="http://bugdeveloper.gitee.io/categories/iOS/"/>
     
     
-      <category term="多Target" scheme="http://bugdeveloper.gitee.io/blog/tags/%E5%A4%9ATarget/"/>
+      <category term="多Target" scheme="http://bugdeveloper.gitee.io/tags/%E5%A4%9ATarget/"/>
     
-      <category term="多版本" scheme="http://bugdeveloper.gitee.io/blog/tags/%E5%A4%9A%E7%89%88%E6%9C%AC/"/>
+      <category term="多版本" scheme="http://bugdeveloper.gitee.io/tags/%E5%A4%9A%E7%89%88%E6%9C%AC/"/>
     
   </entry>
   
   <entry>
     <title>FFmpeg解码流程</title>
-    <link href="http://bugdeveloper.gitee.io/blog/2016/09/30/FFmpeg%E8%A7%A3%E7%A0%81%E6%B5%81%E7%A8%8B/"/>
-    <id>http://bugdeveloper.gitee.io/blog/2016/09/30/FFmpeg解码流程/</id>
+    <link href="http://bugdeveloper.gitee.io/2016/09/30/FFmpeg%E8%A7%A3%E7%A0%81%E6%B5%81%E7%A8%8B/"/>
+    <id>http://bugdeveloper.gitee.io/2016/09/30/FFmpeg解码流程/</id>
     <published>2016-09-30T12:11:56.000Z</published>
     <updated>2018-01-12T13:37:44.000Z</updated>
     
@@ -527,10 +527,10 @@
     
     </summary>
     
-      <category term="FFmpeg" scheme="http://bugdeveloper.gitee.io/blog/categories/FFmpeg/"/>
+      <category term="FFmpeg" scheme="http://bugdeveloper.gitee.io/categories/FFmpeg/"/>
     
     
-      <category term="FFmpeg" scheme="http://bugdeveloper.gitee.io/blog/tags/FFmpeg/"/>
+      <category term="FFmpeg" scheme="http://bugdeveloper.gitee.io/tags/FFmpeg/"/>
     
   </entry>
   
