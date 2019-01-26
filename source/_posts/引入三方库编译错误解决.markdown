@@ -1,0 +1,57 @@
+---
+title: "引入三方库编译错误解决"
+date: 2014-07-27 14:10:28 +0800
+tags: 
+    - 编译
+categories:
+    - iOS
+
+---
+
+# 前言
+Coding中不免要引入三方库,有时候会出现很多编译错误,在此收集一下.
+
+# 正文
+
+1.如下错误可在`Other Link Flags`添加`-licucore`解决
+<!--more--> 
+
+```
+Undefined symbols for architecture i386:
+  "_u_errorName", referenced from:
+      _cm_rkl_NSExceptionForRegex in AGCommon
+      _cm_rkl_userInfoDictionary in AGCommon
+  "_u_strlen", referenced from:
+      _cm_rkl_userInfoDictionary in AGCommon
+  "_uregex_appendReplacement", referenced from:
+      _cm_rkl_replaceAll in AGCommon
+  "_uregex_appendTail", referenced from:
+      _cm_rkl_replaceAll in AGCommon
+  "_uregex_clone", referenced from:
+      -[CMRKLBlockEnumerationHelper initWithRegex:options:string:range:error:] in AGCommon
+  "_uregex_close", referenced from:
+      _cm_rkl_clearCachedRegex in AGCommon
+  "_uregex_end", referenced from:
+      _cm_rkl_performRegexOp in AGCommon
+      _cm_rkl_findRanges in AGCommon
+      _cm_rkl_search in AGCommon
+  "_uregex_find", referenced from:
+      _cm_rkl_search in AGCommon
+  "_uregex_findNext", referenced from:
+      _cm_rkl_search in AGCommon
+      _cm_rkl_replaceAll in AGCommon
+  "_uregex_groupCount", referenced from:
+      _cm_rkl_getCachedRegex in AGCommon
+  "_uregex_open", referenced from:
+      _cm_rkl_getCachedRegex in AGCommon
+  "_uregex_reset", referenced from:
+      _cm_rkl_replaceAll in AGCommon
+  "_uregex_setText", referenced from:
+      -[CMRKLBlockEnumerationHelper initWithRegex:options:string:range:error:] in AGCommon
+      _cm_rkl_performRegexOp in AGCommon
+      _cm_rkl_clearCachedRegexSetTo in AGCommon
+  "_uregex_start", referenced from:
+      _cm_rkl_performRegexOp in AGCommon
+      _cm_rkl_findRanges in AGCommon
+      _cm_rkl_search in AGCommon
+```

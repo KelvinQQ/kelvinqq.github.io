@@ -1,0 +1,28 @@
+---
+title: "博客分页和阅读更多功能"
+date: 2014-08-06 23:21:01 +0800
+tags: 
+    - 博客
+categories:
+    - 杂谈
+
+---
+
+博客也写了几篇了,一页显示有点长,于是就着手分页功能.顺便设置一下"继续阅读"的功能.
+
+* 分页
+
+找到`source/index.html`文件,找到这段代码:
+
+{% img /images/blog/page_before.png %}
+
+<!--more-->
+修改为:
+
+{% img /images/blog/page_after.png %}
+
+    
+* 继续阅读
+
+打开`_config.yml`文件,找到`excerpt_link`字段,你可以修改为自己想要显示的文字,"继续阅读"或者"Read More"等.
+注意到`excerpt_separator`这个字段,内容是`<!--more-->`,这个就是告诉你在写文章的时候,在你想要显示为"继续阅读"的地方添加上`<!--more-->`即可.

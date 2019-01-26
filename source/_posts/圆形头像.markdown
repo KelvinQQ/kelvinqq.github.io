@@ -1,0 +1,23 @@
+---
+title: "圆形头像"
+date: 2014-07-29 23:12:01 +0800
+tags: 
+    - 圆形头像
+categories:
+    - iOS
+---
+
+看过很多圆形头像的APP了.比如最近QQ又更新了,头像都变成圆形的了.
+其实在iOS实现这个很简单,几句代码即可.下面还是贴出来以便查阅.
+<!--more-->
+```
+[imageView.layer setCornerRadius:CGRectGetHeight(imageView.bounds) / 2];
+imageView.layer.masksToBounds = YES;
+// 下面两句是设置圆周的线条颜色,可以根据实际情况选择
+imageView.layer.borderWidth = 3.f;
+imageView.layer.borderColor = [[UIColor whiteColor] CGColor];
+```
+
+最后上一张图吧.
+
+{% img /images/blog/circle_head.png %}

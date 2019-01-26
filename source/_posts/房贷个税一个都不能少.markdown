@@ -1,0 +1,33 @@
+---
+layout: post
+title: "房贷个税一个都不能少"
+date: 2015-06-12 15:14:31 +0800
+categories:
+	- 杂谈
+
+---
+
+## 打个广告
+
+
+最近趁着稍闲,做了个APP,计算房贷和个税的.也不知道起个啥名字,暂时就叫 [综合计算器](https://itunes.apple.com/us/app/zong-he-ji-suan-qi-fang-dai/id995894882?l=zh&ls=1&mt=8).
+
+刚刚送上线.话说苹果审核真麻烦.又拖了我2个星期.
+
+如果有需要的话可以支持一下哦~
+<!--more-->
+当初做的时候也是处于懒得装两个APP,毕竟一个小功能,于是就有了这个综合版,顺便赚点外快.
+
+再来个二维码
+
+{% img /images/blog/calculate_app_qrcode.png %}
+
+ps:
+
+1.如果你有好的命名可以发邮件给我哦~
+
+2.如果你想做安卓版也可以发邮件给我哦~
+
+3.如果你有其他想法也可以发邮件给我哦~
+
+下面是我的邮箱: [history_zq@163.com](mailto:history_zq@163.com)
