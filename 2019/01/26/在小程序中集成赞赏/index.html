@@ -96,23 +96,23 @@
 
 
 
-  <meta name="description" content="阅读本文大概需要3分钟。  好吧，我承认我标题党了，如果你是进来找如何搭建小程序中的支付流程的，请你下车吧~ 这篇文章是介绍个人小程序如何集成赞赏功能的，利用微信小程序提供的支付接口必须具有公司资质才可以。或者你也可以集成有赞，不过会抽取一定的手续费。 言归正传，让我们一步一步来集成赞赏吧，让那些喜欢你的用户也可以打赏你一下。 生成一个赞赏码。打开微信，点击右上角加号-&amp;gt;收付款-&amp;gt;赞">
+  <meta name="description" content="阅读本文大概需要3分钟。  好吧，我承认我标题党了，如果你是进来找如何搭建小程序中的支付流程的，请你下车吧~ 这篇文章是介绍个人小程序如何集成赞赏功能的，利用微信小程序提供的支付接口必须具有公司资质才可以。或者你也可以集成有赞，不过会抽取一定的手续费。">
 <meta name="keywords" content="小程序,赞赏">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在小程序中集成赞赏">
 <meta property="og:url" content="http://bugdeveloper.gitee.io/2019/01/26/在小程序中集成赞赏/index.html">
 <meta property="og:site_name" content="Bug开发者">
-<meta property="og:description" content="阅读本文大概需要3分钟。  好吧，我承认我标题党了，如果你是进来找如何搭建小程序中的支付流程的，请你下车吧~ 这篇文章是介绍个人小程序如何集成赞赏功能的，利用微信小程序提供的支付接口必须具有公司资质才可以。或者你也可以集成有赞，不过会抽取一定的手续费。 言归正传，让我们一步一步来集成赞赏吧，让那些喜欢你的用户也可以打赏你一下。 生成一个赞赏码。打开微信，点击右上角加号-&amp;gt;收付款-&amp;gt;赞">
+<meta property="og:description" content="阅读本文大概需要3分钟。  好吧，我承认我标题党了，如果你是进来找如何搭建小程序中的支付流程的，请你下车吧~ 这篇文章是介绍个人小程序如何集成赞赏功能的，利用微信小程序提供的支付接口必须具有公司资质才可以。或者你也可以集成有赞，不过会抽取一定的手续费。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190104120313434.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190104124836439.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pxMjgyNTAyNTMy,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190104130648991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pxMjgyNTAyNTMy,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190104131248871.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pxMjgyNTAyNTMy,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190104130638423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pxMjgyNTAyNTMy,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-01-26T06:02:35.000Z">
+<meta property="og:updated_time" content="2019-01-26T06:05:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在小程序中集成赞赏">
-<meta name="twitter:description" content="阅读本文大概需要3分钟。  好吧，我承认我标题党了，如果你是进来找如何搭建小程序中的支付流程的，请你下车吧~ 这篇文章是介绍个人小程序如何集成赞赏功能的，利用微信小程序提供的支付接口必须具有公司资质才可以。或者你也可以集成有赞，不过会抽取一定的手续费。 言归正传，让我们一步一步来集成赞赏吧，让那些喜欢你的用户也可以打赏你一下。 生成一个赞赏码。打开微信，点击右上角加号-&amp;gt;收付款-&amp;gt;赞">
+<meta name="twitter:description" content="阅读本文大概需要3分钟。  好吧，我承认我标题党了，如果你是进来找如何搭建小程序中的支付流程的，请你下车吧~ 这篇文章是介绍个人小程序如何集成赞赏功能的，利用微信小程序提供的支付接口必须具有公司资质才可以。或者你也可以集成有赞，不过会抽取一定的手续费。">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190104120313434.png">
 
 
@@ -391,7 +391,7 @@
                 
               
 
-              <time title="Created: 2019-01-26 14:01:45 / Modified: 14:02:35" itemprop="dateCreated datePublished" datetime="2019-01-26T14:01:45+08:00">2019-01-26</time>
+              <time title="Created: 2019-01-26 14:01:45 / Modified: 14:05:54" itemprop="dateCreated datePublished" datetime="2019-01-26T14:01:45+08:00">2019-01-26</time>
             
 
             
@@ -453,6 +453,7 @@
 </blockquote>
 <p>好吧，我承认我标题党了，如果你是进来找如何搭建小程序中的支付流程的，请你下车吧~</p>
 <p>这篇文章是介绍个人小程序如何集成赞赏功能的，利用微信小程序提供的支付接口必须具有公司资质才可以。或者你也可以集成有赞，不过会抽取一定的手续费。</p>
+<a id="more"></a>
 <p>言归正传，让我们一步一步来集成赞赏吧，让那些喜欢你的用户也可以打赏你一下。</p>
 <h2 id="生成一个赞赏码。"><a href="#生成一个赞赏码。" class="headerlink" title="生成一个赞赏码。"></a>生成一个赞赏码。</h2><p>打开微信，点击右上角<code>加号-&gt;收付款-&gt;赞赏码</code>，这里你可以进行一些赞赏设置，然后点击保存赞赏码。这样你就拥有了你专属的赞赏码了。</p>
 <h2 id="获取一个图片地址"><a href="#获取一个图片地址" class="headerlink" title="获取一个图片地址"></a>获取一个图片地址</h2><ul>

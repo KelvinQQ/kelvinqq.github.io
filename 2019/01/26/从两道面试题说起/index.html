@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="iOS 中是否存在野指针的情况？野指针野指针指向一个已删除的对象或未申请访问受限内存区域的指针。特别要指出的是野指针不是空指针。 Block一提到 Block 大家肯定都知道要说的是循环引用。在 ARC 中，如果两个对象相互持有对方，就会造成循环引用，导致内存无法释放。在 Block 中，最常用的场景则是，self 持有 block ， block 中又持有了 self 。例如下方一段代码：123">
+  <meta name="description" content="iOS 中是否存在野指针的情况？野指针野指针指向一个已删除的对象或未申请访问受限内存区域的指针。特别要指出的是野指针不是空指针。 Block一提到 Block 大家肯定都知道要说的是循环引用。在 ARC 中，如果两个对象相互持有对方，就会造成循环引用，导致内存无法释放。在 Block 中，最常用的场景则是，self 持有 block ， block 中又持有了 self 。例如下方一段代码：">
 <meta name="keywords" content="iOS,面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从两道面试题说起">
 <meta property="og:url" content="http://bugdeveloper.gitee.io/2019/01/26/从两道面试题说起/index.html">
 <meta property="og:site_name" content="Bug开发者">
-<meta property="og:description" content="iOS 中是否存在野指针的情况？野指针野指针指向一个已删除的对象或未申请访问受限内存区域的指针。特别要指出的是野指针不是空指针。 Block一提到 Block 大家肯定都知道要说的是循环引用。在 ARC 中，如果两个对象相互持有对方，就会造成循环引用，导致内存无法释放。在 Block 中，最常用的场景则是，self 持有 block ， block 中又持有了 self 。例如下方一段代码：123">
+<meta property="og:description" content="iOS 中是否存在野指针的情况？野指针野指针指向一个已删除的对象或未申请访问受限内存区域的指针。特别要指出的是野指针不是空指针。 Block一提到 Block 大家肯定都知道要说的是循环引用。在 ARC 中，如果两个对象相互持有对方，就会造成循环引用，导致内存无法释放。在 Block 中，最常用的场景则是，self 持有 block ， block 中又持有了 self 。例如下方一段代码：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-26T06:01:22.000Z">
+<meta property="og:updated_time" content="2019-01-26T06:05:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从两道面试题说起">
-<meta name="twitter:description" content="iOS 中是否存在野指针的情况？野指针野指针指向一个已删除的对象或未申请访问受限内存区域的指针。特别要指出的是野指针不是空指针。 Block一提到 Block 大家肯定都知道要说的是循环引用。在 ARC 中，如果两个对象相互持有对方，就会造成循环引用，导致内存无法释放。在 Block 中，最常用的场景则是，self 持有 block ， block 中又持有了 self 。例如下方一段代码：123">
+<meta name="twitter:description" content="iOS 中是否存在野指针的情况？野指针野指针指向一个已删除的对象或未申请访问受限内存区域的指针。特别要指出的是野指针不是空指针。 Block一提到 Block 大家肯定都知道要说的是循环引用。在 ARC 中，如果两个对象相互持有对方，就会造成循环引用，导致内存无法释放。在 Block 中，最常用的场景则是，self 持有 block ， block 中又持有了 self 。例如下方一段代码：">
 
 
 
@@ -385,7 +385,7 @@
                 
               
 
-              <time title="Created: 2019-01-26 13:58:34 / Modified: 14:01:22" itemprop="dateCreated datePublished" datetime="2019-01-26T13:58:34+08:00">2019-01-26</time>
+              <time title="Created: 2019-01-26 13:58:34 / Modified: 14:05:43" itemprop="dateCreated datePublished" datetime="2019-01-26T13:58:34+08:00">2019-01-26</time>
             
 
             
@@ -443,7 +443,7 @@
 
       
         <h1 id="iOS-中是否存在野指针的情况？"><a href="#iOS-中是否存在野指针的情况？" class="headerlink" title="iOS 中是否存在野指针的情况？"></a><code>iOS</code> 中是否存在野指针的情况？</h1><h2 id="野指针"><a href="#野指针" class="headerlink" title="野指针"></a>野指针</h2><p>野指针指向一个已删除的对象或未申请访问受限内存区域的指针。特别要指出的是野指针不是空指针。</p>
-<h2 id="Block"><a href="#Block" class="headerlink" title="Block"></a><code>Block</code></h2><p>一提到 <code>Block</code> 大家肯定都知道要说的是循环引用。在 <code>ARC</code> 中，如果两个对象相互持有对方，就会造成循环引用，导致内存无法释放。在 <code>Block</code> 中，最常用的场景则是，<code>self</code> 持有 <code>block</code> ， <code>block</code> 中又持有了 <code>self</code> 。例如下方一段代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatmaic, copy) Block dataChanged;</span><br><span class="line"></span><br><span class="line">- (void)setUpModel&#123;</span><br><span class="line">  XYModel *model = [XYModel new];</span><br><span class="line">  model.dataChanged = ^(NSString *title) &#123;</span><br><span class="line">      self.titleLabel.text = title;                </span><br><span class="line">  &#125;;</span><br><span class="line">  self.model = model;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Block"><a href="#Block" class="headerlink" title="Block"></a><code>Block</code></h2><p>一提到 <code>Block</code> 大家肯定都知道要说的是循环引用。在 <code>ARC</code> 中，如果两个对象相互持有对方，就会造成循环引用，导致内存无法释放。在 <code>Block</code> 中，最常用的场景则是，<code>self</code> 持有 <code>block</code> ， <code>block</code> 中又持有了 <code>self</code> 。例如下方一段代码：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatmaic, copy) Block dataChanged;</span><br><span class="line"></span><br><span class="line">- (void)setUpModel&#123;</span><br><span class="line">  XYModel *model = [XYModel new];</span><br><span class="line">  model.dataChanged = ^(NSString *title) &#123;</span><br><span class="line">      self.titleLabel.text = title;                </span><br><span class="line">  &#125;;</span><br><span class="line">  self.model = model;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>上面的这段代码就会造成循环引用。那我们怎么破除呢？通常的做法都是使用 <code>weakSelf</code> 来处理，即：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (void)setUpModel &#123;</span><br><span class="line">  XYModel *model = [XYModel new];</span><br><span class="line">  __weak typeof(self) weakSelf = self;</span><br><span class="line">  model.dataChanged = ^(NSString *title) &#123;</span><br><span class="line">      weakSelf.titleLabel.text = title;   </span><br><span class="line">  &#125;;</span><br><span class="line">  self.model = model;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>或许你还看到另外一种不是很一样的版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (void)setUpModel &#123;</span><br><span class="line">  XYModel *model = [XYModel new];</span><br><span class="line">  __weak typeof(self) weakSelf = self;</span><br><span class="line">  model.dataChanged = ^(NSString *title) &#123;</span><br><span class="line">      __strong typeof(self) strongSelf = weakSelf;</span><br><span class="line">      strongSelf.titleLabel.text = title;   </span><br><span class="line">  &#125;;</span><br><span class="line">  self.model = model;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
