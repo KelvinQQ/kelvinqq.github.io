@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="图片来自 泼辣有图 By sleepyeyes  写这个话题，自然让人想到会利用这个技术去做一些不是很明亮的事情~哈哈，这个不在我们今天的讨论之中，我只提供一些技术，如有任何后果，我不承担任何责任~">
+<meta name="keywords" content="定位">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用Xcode修改iPhone定位">
+<meta property="og:url" content="http://bugdeveloper.gitee.io/2019/01/30/利用Xcode修改iPhone定位/index.html">
+<meta property="og:site_name" content="Bug开发者">
+<meta property="og:description" content="图片来自 泼辣有图 By sleepyeyes  写这个话题，自然让人想到会利用这个技术去做一些不是很明亮的事情~哈哈，这个不在我们今天的讨论之中，我只提供一些技术，如有任何后果，我不承担任何责任~">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://bugdeveloper.gitee.io/images/blog/利用Xcode修改iPhone定位/cover.jpg">
+<meta property="og:image" content="http://bugdeveloper.gitee.io/images/blog/利用Xcode修改iPhone定位/image-1.png">
+<meta property="og:image" content="http://bugdeveloper.gitee.io/images/blog/利用Xcode修改iPhone定位/image-2.png">
+<meta property="og:image" content="http://bugdeveloper.gitee.io/images/blog/利用Xcode修改iPhone定位/image-3.png">
+<meta property="og:image" content="http://bugdeveloper.gitee.io/images/blog/利用Xcode修改iPhone定位/image-4.png">
+<meta property="og:updated_time" content="2019-01-30T14:05:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用Xcode修改iPhone定位">
+<meta name="twitter:description" content="图片来自 泼辣有图 By sleepyeyes  写这个话题，自然让人想到会利用这个技术去做一些不是很明亮的事情~哈哈，这个不在我们今天的讨论之中，我只提供一些技术，如有任何后果，我不承担任何责任~">
+<meta name="twitter:image" content="http://bugdeveloper.gitee.io/images/blog/利用Xcode修改iPhone定位/cover.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Bug开发者" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://bugdeveloper.gitee.io/2019/01/30/利用Xcode修改iPhone定位/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>利用Xcode修改iPhone定位 | Bug开发者</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Bug开发者</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://bugdeveloper.gitee.io/2019/01/30/利用Xcode修改iPhone定位/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bug开发者">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/history.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bug开发者">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">利用Xcode修改iPhone定位
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-30 20:28:52 / Modified: 22:05:11" itemprop="dateCreated datePublished" datetime="2019-01-30T20:28:52+08:00">2019-01-30</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <img src="/images/blog/利用Xcode修改iPhone定位/cover.jpg">
+<p>图片来自 泼辣有图 By sleepyeyes</p>
+<blockquote>
+<p>写这个话题，自然让人想到会利用这个技术去做一些不是很明亮的事情~哈哈，这个不在我们今天的讨论之中，我只提供一些技术，如有任何后果，我不承担任何责任~</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="0x00-准备工具"><a href="#0x00-准备工具" class="headerlink" title="0x00 准备工具"></a>0x00 准备工具</h1><ul>
+<li>一台装了<code>Xcode</code>的<code>Mac</code>电脑</li>
+<li>一台<code>iPhone</code>(无需越狱)</li>
+<li>一根数据线</li>
+</ul>
+<h1 id="0x01-坐标选取"><a href="#0x01-坐标选取" class="headerlink" title="0x01 坐标选取"></a>0x01 坐标选取</h1><p>手机的定位是利用<code>GPS</code>来获取当前位置的经纬度信息的，手机<code>App</code>最终都是根据经纬度信息来判断当前位置是否在合理的区域内。所以我们首先需要知道，合理位置的经纬度是多少。</p>
+<p>获取经纬度的工具有许多，高德、百度、谷歌都可以，这里我们以<a href="https://lbs.amap.com/console/show/picker" target="_blank" rel="noopener">高德</a>为例，打开网址后，利用关键字搜索到位置的经纬度如下：</p>
+<img src="/images/blog/利用Xcode修改iPhone定位/image-1.png">
+<p>得到经纬度信息</p>
+<blockquote>
+<p>120.026208,30.279212</p>
+</blockquote>
+<h1 id="0x02-编写代码"><a href="#0x02-编写代码" class="headerlink" title="0x02 编写代码"></a>0x02 编写代码</h1><ol>
+<li>打开<code>Xcode</code>，新建一个工程。</li>
+<li>新建一个<code>gpx</code>文件，内容如下，并添加到工程。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;gpx version=&quot;1.1&quot;</span><br><span class="line">    creator=&quot;GMapToGPX 6.4j - http://www.elsewhere.org/GMapToGPX/&quot;</span><br><span class="line">    xmlns=&quot;http://www.topografix.com/GPX/1/1&quot;</span><br><span class="line">    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">    xsi:schemaLocation=&quot;http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd&quot;&gt;</span><br><span class="line">    &lt;wpt lat=&quot;30.279212&quot; lon=&quot;120.026208&quot;&gt;</span><br><span class="line">    &lt;/wpt&gt;</span><br><span class="line">&lt;/gpx&gt;</span><br></pre></td></tr></table></figure>
+<p>记得把经纬度替换为上一步从高德网页获取到的。</p>
+<img src="/images/blog/利用Xcode修改iPhone定位/image-2.png">
+<h1 id="0x03-配置工程"><a href="#0x03-配置工程" class="headerlink" title="0x03 配置工程"></a>0x03 配置工程</h1><ol>
+<li><p>在<code>Xcode</code>项目中，选择<code>Edit Scheme...</code>，然后选择<code>Run-&gt;Options-&gt;Core Location</code>。</p>
+</li>
+<li><p>选中<code>Allow Location Simulation</code>，并在下方的<code>Defalut Location</code>中选择刚刚新建的<code>gps.gpx</code>文件，如下图。</p>
+</li>
+</ol>
+<img src="/images/blog/利用Xcode修改iPhone定位/image-3.png">
+<h1 id="0x04-大功告成"><a href="#0x04-大功告成" class="headerlink" title="0x04 大功告成"></a>0x04 大功告成</h1><p>连接手机，运行你的程序。由于没有写任何<code>iOS</code>相关代码，所以应该是一片白屏。不要在意这个。</p>
+<p>不要停止你的程序，直接退到后台，然后打开你的高德地图，你发现你的位置就在阿里巴巴了。</p>
+<img src="/images/blog/利用Xcode修改iPhone定位/image-4.png">
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+  <img id="wechat_subscriber_qcode" src="/images/weixin_qrcode.png" alt="Bug开发者 wechat" style="width: 200px; max-width: 100%;">
+  <div>扫码关注公众号，第一时间阅读我的文章！</div>
+</div>
+
+      </div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/定位/" rel="tag"># 定位</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/30/两个Bug引发的阴谋论/" rel="next" title="两个Bug引发的阴谋论">
+                <i class="fa fa-chevron-left"></i> 两个Bug引发的阴谋论
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/history.jpg" alt="Bug开发者">
+            
+              <p class="site-author-name" itemprop="name">Bug开发者</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/HistoryZhang" title="GitHub &rarr; https://github.com/HistoryZhang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:history_zq@163.com" title="E-Mail &rarr; mailto:history_zq@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://juejin.im/user/57b7a5dca633bd00665494ce" title="掘金 &rarr; https://juejin.im/user/57b7a5dca633bd00665494ce" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>掘金</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://blog.csdn.net/zq282502532" title="CSDN &rarr; https://blog.csdn.net/zq282502532" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>CSDN</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://www.jianshu.com/u/929be7926bab" title="简书 &rarr; http://www.jianshu.com/u/929be7926bab" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>简书</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://nshipster.cn/" title="http://nshipster.cn/" rel="noopener" target="_blank">NSHipster中文版</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://onevcat.com/#blog" title="https://onevcat.com/#blog" rel="noopener" target="_blank">OneV's Den</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wereadteam.github.io/" title="http://wereadteam.github.io/" rel="noopener" target="_blank">微信阅读</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://misterbooo.github.io/" title="https://misterbooo.github.io/" rel="noopener" target="_blank">五分钟学算法</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://whysodiao.com/" title="http://whysodiao.com/" rel="noopener" target="_blank">Loki</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://limboy.me/" title="https://limboy.me/" rel="noopener" target="_blank">Limboy's HQ</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://pingguohe.net/" title="http://pingguohe.net/" rel="noopener" target="_blank">苹果核</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0x00-准备工具"><span class="nav-number">1.</span> <span class="nav-text">0x00 准备工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x01-坐标选取"><span class="nav-number">2.</span> <span class="nav-text">0x01 坐标选取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x02-编写代码"><span class="nav-number">3.</span> <span class="nav-text">0x02 编写代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x03-配置工程"><span class="nav-number">4.</span> <span class="nav-text">0x03 配置工程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x04-大功告成"><span class="nav-number">5.</span> <span class="nav-text">0x04 大功告成</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2014 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bug开发者</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.7.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+
+  
+</div>
+
+
+
+
+
+  <script>
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=63752668";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=6.7.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

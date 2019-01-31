@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bugdeveloper.gitee.io/"/>
-  <updated>2019-01-30T12:22:37.000Z</updated>
+  <updated>2019-01-30T14:05:11.000Z</updated>
   <id>http://bugdeveloper.gitee.io/</id>
   
   <author>
@@ -17,9 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>利用Xcode修改iPhone定位</title>
+    <link href="http://bugdeveloper.gitee.io/%E5%88%A9%E7%94%A8Xcode%E4%BF%AE%E6%94%B9iPhone%E5%AE%9A%E4%BD%8D/"/>
+    <id>http://bugdeveloper.gitee.io/利用Xcode修改iPhone定位/</id>
+    <published>2019-01-30T12:28:52.000Z</published>
+    <updated>2019-01-30T14:05:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/images/blog/利用Xcode修改iPhone定位/cover.jpg"><p>图片来自 泼辣有图 By sleepyeyes</p><blockquote><p>写这个话题，自然让人想到会利用这个技术去做一些不是很明亮的事情~哈哈，这个不在我们今天的讨论之中，我只提供一些技术，如有任何后果，我不承担任何责任~</p></blockquote><a id="more"></a><h1 id="0x00-准备工具"><a href="#0x00-准备工具" class="headerlink" title="0x00 准备工具"></a>0x00 准备工具</h1><ul><li>一台装了<code>Xcode</code>的<code>Mac</code>电脑</li><li>一台<code>iPhone</code>(无需越狱)</li><li>一根数据线</li></ul><h1 id="0x01-坐标选取"><a href="#0x01-坐标选取" class="headerlink" title="0x01 坐标选取"></a>0x01 坐标选取</h1><p>手机的定位是利用<code>GPS</code>来获取当前位置的经纬度信息的，手机<code>App</code>最终都是根据经纬度信息来判断当前位置是否在合理的区域内。所以我们首先需要知道，合理位置的经纬度是多少。</p><p>获取经纬度的工具有许多，高德、百度、谷歌都可以，这里我们以<a href="https://lbs.amap.com/console/show/picker" target="_blank" rel="noopener">高德</a>为例，打开网址后，利用关键字搜索到位置的经纬度如下：</p><img src="/images/blog/利用Xcode修改iPhone定位/image-1.png"><p>得到经纬度信息</p><blockquote><p>120.026208,30.279212</p></blockquote><h1 id="0x02-编写代码"><a href="#0x02-编写代码" class="headerlink" title="0x02 编写代码"></a>0x02 编写代码</h1><ol><li>打开<code>Xcode</code>，新建一个工程。</li><li>新建一个<code>gpx</code>文件，内容如下，并添加到工程。</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;gpx version=&quot;1.1&quot;</span><br><span class="line">    creator=&quot;GMapToGPX 6.4j - http://www.elsewhere.org/GMapToGPX/&quot;</span><br><span class="line">    xmlns=&quot;http://www.topografix.com/GPX/1/1&quot;</span><br><span class="line">    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">    xsi:schemaLocation=&quot;http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd&quot;&gt;</span><br><span class="line">    &lt;wpt lat=&quot;30.279212&quot; lon=&quot;120.026208&quot;&gt;</span><br><span class="line">    &lt;/wpt&gt;</span><br><span class="line">&lt;/gpx&gt;</span><br></pre></td></tr></table></figure><p>记得把经纬度替换为上一步从高德网页获取到的。</p><img src="/images/blog/利用Xcode修改iPhone定位/image-2.png"><h1 id="0x03-配置工程"><a href="#0x03-配置工程" class="headerlink" title="0x03 配置工程"></a>0x03 配置工程</h1><ol><li><p>在<code>Xcode</code>项目中，选择<code>Edit Scheme...</code>，然后选择<code>Run-&gt;Options-&gt;Core Location</code>。</p></li><li><p>选中<code>Allow Location Simulation</code>，并在下方的<code>Defalut Location</code>中选择刚刚新建的<code>gps.gpx</code>文件，如下图。</p></li></ol><img src="/images/blog/利用Xcode修改iPhone定位/image-3.png"><h1 id="0x04-大功告成"><a href="#0x04-大功告成" class="headerlink" title="0x04 大功告成"></a>0x04 大功告成</h1><p>连接手机，运行你的程序。由于没有写任何<code>iOS</code>相关代码，所以应该是一片白屏。不要在意这个。</p><p>不要停止你的程序，直接退到后台，然后打开你的高德地图，你发现你的位置就在阿里巴巴了。</p><img src="/images/blog/利用Xcode修改iPhone定位/image-4.png">]]></content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/images/blog/利用Xcode修改iPhone定位/cover.jpg&quot;&gt;
+&lt;p&gt;图片来自 泼辣有图 By sleepyeyes&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;写这个话题，自然让人想到会利用这个技术去做一些不是很明亮的事情~哈哈，这个不在我们今天的讨论之中，我只提供一些技术，如有任何后果，我不承担任何责任~&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://bugdeveloper.gitee.io/categories/iOS/"/>
+    
+    
+      <category term="定位" scheme="http://bugdeveloper.gitee.io/tags/%E5%AE%9A%E4%BD%8D/"/>
+    
+  </entry>
+  
+  <entry>
     <title>两个Bug引发的阴谋论</title>
-    <link href="http://bugdeveloper.gitee.io/2019/01/30/%E4%B8%A4%E4%B8%AABug%E5%BC%95%E5%8F%91%E7%9A%84%E9%98%B4%E8%B0%8B%E8%AE%BA/"/>
-    <id>http://bugdeveloper.gitee.io/2019/01/30/两个Bug引发的阴谋论/</id>
+    <link href="http://bugdeveloper.gitee.io/%E4%B8%A4%E4%B8%AABug%E5%BC%95%E5%8F%91%E7%9A%84%E9%98%B4%E8%B0%8B%E8%AE%BA/"/>
+    <id>http://bugdeveloper.gitee.io/两个Bug引发的阴谋论/</id>
     <published>2019-01-30T12:12:47.000Z</published>
     <updated>2019-01-30T12:22:37.000Z</updated>
     
@@ -43,8 +69,8 @@
   
   <entry>
     <title>使用LeanCloud快速开发一款小程序</title>
-    <link href="http://bugdeveloper.gitee.io/2019/01/26/%E4%BD%BF%E7%94%A8LeanCloud%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E4%B8%80%E6%AC%BE%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    <id>http://bugdeveloper.gitee.io/2019/01/26/使用LeanCloud快速开发一款小程序/</id>
+    <link href="http://bugdeveloper.gitee.io/%E4%BD%BF%E7%94%A8LeanCloud%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E4%B8%80%E6%AC%BE%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://bugdeveloper.gitee.io/使用LeanCloud快速开发一款小程序/</id>
     <published>2019-01-26T06:03:04.000Z</published>
     <updated>2019-01-26T06:05:58.000Z</updated>
     
@@ -67,8 +93,8 @@
   
   <entry>
     <title>在小程序中集成赞赏</title>
-    <link href="http://bugdeveloper.gitee.io/2019/01/26/%E5%9C%A8%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%AD%E9%9B%86%E6%88%90%E8%B5%9E%E8%B5%8F/"/>
-    <id>http://bugdeveloper.gitee.io/2019/01/26/在小程序中集成赞赏/</id>
+    <link href="http://bugdeveloper.gitee.io/%E5%9C%A8%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%AD%E9%9B%86%E6%88%90%E8%B5%9E%E8%B5%8F/"/>
+    <id>http://bugdeveloper.gitee.io/在小程序中集成赞赏/</id>
     <published>2019-01-26T06:01:45.000Z</published>
     <updated>2019-01-26T06:05:54.000Z</updated>
     
@@ -95,8 +121,8 @@
   
   <entry>
     <title>从两道面试题说起</title>
-    <link href="http://bugdeveloper.gitee.io/2019/01/26/%E4%BB%8E%E4%B8%A4%E9%81%93%E9%9D%A2%E8%AF%95%E9%A2%98%E8%AF%B4%E8%B5%B7/"/>
-    <id>http://bugdeveloper.gitee.io/2019/01/26/从两道面试题说起/</id>
+    <link href="http://bugdeveloper.gitee.io/%E4%BB%8E%E4%B8%A4%E9%81%93%E9%9D%A2%E8%AF%95%E9%A2%98%E8%AF%B4%E8%B5%B7/"/>
+    <id>http://bugdeveloper.gitee.io/从两道面试题说起/</id>
     <published>2019-01-26T05:58:34.000Z</published>
     <updated>2019-01-26T06:05:43.000Z</updated>
     
@@ -120,8 +146,8 @@
   
   <entry>
     <title>Flutter初体验</title>
-    <link href="http://bugdeveloper.gitee.io/2019/01/26/Flutter%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
-    <id>http://bugdeveloper.gitee.io/2019/01/26/Flutter初体验/</id>
+    <link href="http://bugdeveloper.gitee.io/Flutter%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
+    <id>http://bugdeveloper.gitee.io/Flutter初体验/</id>
     <published>2019-01-26T05:55:40.000Z</published>
     <updated>2019-01-26T06:05:51.000Z</updated>
     
@@ -151,8 +177,8 @@
   
   <entry>
     <title>小程序利用Canvas绘制图片和竖排文字</title>
-    <link href="http://bugdeveloper.gitee.io/2018/05/14/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%A9%E7%94%A8Canvas%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87%E5%92%8C%E7%AB%96%E6%8E%92%E6%96%87%E5%AD%97/"/>
-    <id>http://bugdeveloper.gitee.io/2018/05/14/小程序利用Canvas绘制图片和竖排文字/</id>
+    <link href="http://bugdeveloper.gitee.io/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%A9%E7%94%A8Canvas%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87%E5%92%8C%E7%AB%96%E6%8E%92%E6%96%87%E5%AD%97/"/>
+    <id>http://bugdeveloper.gitee.io/小程序利用Canvas绘制图片和竖排文字/</id>
     <published>2018-05-14T13:53:44.000Z</published>
     <updated>2018-05-14T15:07:05.000Z</updated>
     
@@ -171,8 +197,8 @@
   
   <entry>
     <title>公众号推荐</title>
-    <link href="http://bugdeveloper.gitee.io/2018/02/07/%E5%85%AC%E4%BC%97%E5%8F%B7%E6%8E%A8%E8%8D%90/"/>
-    <id>http://bugdeveloper.gitee.io/2018/02/07/公众号推荐/</id>
+    <link href="http://bugdeveloper.gitee.io/%E5%85%AC%E4%BC%97%E5%8F%B7%E6%8E%A8%E8%8D%90/"/>
+    <id>http://bugdeveloper.gitee.io/公众号推荐/</id>
     <published>2018-02-07T13:44:35.000Z</published>
     <updated>2018-02-07T13:51:54.000Z</updated>
     
@@ -196,8 +222,8 @@
   
   <entry>
     <title>Swift关于!和?的Tip</title>
-    <link href="http://bugdeveloper.gitee.io/2018/02/06/Swift%E5%85%B3%E4%BA%8E%E8%A7%A3%E5%8C%85%E7%9A%84Tip/"/>
-    <id>http://bugdeveloper.gitee.io/2018/02/06/Swift关于解包的Tip/</id>
+    <link href="http://bugdeveloper.gitee.io/Swift%E5%85%B3%E4%BA%8E%E8%A7%A3%E5%8C%85%E7%9A%84Tip/"/>
+    <id>http://bugdeveloper.gitee.io/Swift关于解包的Tip/</id>
     <published>2018-02-06T13:45:07.000Z</published>
     <updated>2018-02-06T14:00:10.000Z</updated>
     
@@ -223,8 +249,8 @@
   
   <entry>
     <title>Github源码索引</title>
-    <link href="http://bugdeveloper.gitee.io/2018/01/27/Github%E6%BA%90%E7%A0%81%E7%B4%A2%E5%BC%95/"/>
-    <id>http://bugdeveloper.gitee.io/2018/01/27/Github源码索引/</id>
+    <link href="http://bugdeveloper.gitee.io/Github%E6%BA%90%E7%A0%81%E7%B4%A2%E5%BC%95/"/>
+    <id>http://bugdeveloper.gitee.io/Github源码索引/</id>
     <published>2018-01-27T06:12:05.000Z</published>
     <updated>2018-02-03T07:46:46.000Z</updated>
     
@@ -247,8 +273,8 @@
   
   <entry>
     <title>Github源码推荐(1.22~1.28)</title>
-    <link href="http://bugdeveloper.gitee.io/2018/01/27/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.22-1.28)/"/>
-    <id>http://bugdeveloper.gitee.io/2018/01/27/Github源码推荐(1.22-1.28)/</id>
+    <link href="http://bugdeveloper.gitee.io/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.22-1.28)/"/>
+    <id>http://bugdeveloper.gitee.io/Github源码推荐(1.22-1.28)/</id>
     <published>2018-01-27T04:39:11.000Z</published>
     <updated>2018-02-03T07:50:22.000Z</updated>
     
@@ -273,8 +299,8 @@
   
   <entry>
     <title>Github源码推荐(1.15~1.21)</title>
-    <link href="http://bugdeveloper.gitee.io/2018/01/21/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.15~1.21)/"/>
-    <id>http://bugdeveloper.gitee.io/2018/01/21/Github源码推荐(1.15~1.21)/</id>
+    <link href="http://bugdeveloper.gitee.io/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.15~1.21)/"/>
+    <id>http://bugdeveloper.gitee.io/Github源码推荐(1.15~1.21)/</id>
     <published>2018-01-21T03:21:06.000Z</published>
     <updated>2018-02-03T07:50:13.000Z</updated>
     
@@ -303,8 +329,8 @@
   
   <entry>
     <title>Github源码推荐(1.8~1.14)</title>
-    <link href="http://bugdeveloper.gitee.io/2018/01/14/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.8~1.14)/"/>
-    <id>http://bugdeveloper.gitee.io/2018/01/14/Github源码推荐(1.8~1.14)/</id>
+    <link href="http://bugdeveloper.gitee.io/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.8~1.14)/"/>
+    <id>http://bugdeveloper.gitee.io/Github源码推荐(1.8~1.14)/</id>
     <published>2018-01-14T14:22:30.000Z</published>
     <updated>2018-02-03T07:50:18.000Z</updated>
     
@@ -339,8 +365,8 @@
   
   <entry>
     <title>CocoaPods设置target支持的swift版本 </title>
-    <link href="http://bugdeveloper.gitee.io/2017/11/24/CocoaPods%E8%AE%BE%E7%BD%AEtarget%E6%94%AF%E6%8C%81%E7%9A%84swift%E7%89%88%E6%9C%AC/"/>
-    <id>http://bugdeveloper.gitee.io/2017/11/24/CocoaPods设置target支持的swift版本/</id>
+    <link href="http://bugdeveloper.gitee.io/CocoaPods%E8%AE%BE%E7%BD%AEtarget%E6%94%AF%E6%8C%81%E7%9A%84swift%E7%89%88%E6%9C%AC/"/>
+    <id>http://bugdeveloper.gitee.io/CocoaPods设置target支持的swift版本/</id>
     <published>2017-11-24T00:50:33.000Z</published>
     <updated>2018-02-03T07:46:03.000Z</updated>
     
@@ -363,8 +389,8 @@
   
   <entry>
     <title>Xcode9下自动化编译错误</title>
-    <link href="http://bugdeveloper.gitee.io/2017/11/09/Xcode9%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/"/>
-    <id>http://bugdeveloper.gitee.io/2017/11/09/Xcode9下自动化编译错误/</id>
+    <link href="http://bugdeveloper.gitee.io/Xcode9%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/"/>
+    <id>http://bugdeveloper.gitee.io/Xcode9下自动化编译错误/</id>
     <published>2017-11-09T14:03:20.000Z</published>
     <updated>2018-02-03T07:48:21.000Z</updated>
     
@@ -391,8 +417,8 @@
   
   <entry>
     <title>Swift4.0引用3.0第三方库</title>
-    <link href="http://bugdeveloper.gitee.io/2017/10/21/Swift4.0%E5%BC%95%E7%94%A83.0%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"/>
-    <id>http://bugdeveloper.gitee.io/2017/10/21/Swift4.0引用3.0第三方库/</id>
+    <link href="http://bugdeveloper.gitee.io/Swift4.0%E5%BC%95%E7%94%A83.0%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"/>
+    <id>http://bugdeveloper.gitee.io/Swift4.0引用3.0第三方库/</id>
     <published>2017-10-21T15:56:21.000Z</published>
     <updated>2018-02-03T07:47:58.000Z</updated>
     
@@ -415,8 +441,8 @@
   
   <entry>
     <title>iOS下更改系统音量</title>
-    <link href="http://bugdeveloper.gitee.io/2017/09/30/iOS%E4%B8%8B%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E9%9F%B3%E9%87%8F/"/>
-    <id>http://bugdeveloper.gitee.io/2017/09/30/iOS下更改系统音量/</id>
+    <link href="http://bugdeveloper.gitee.io/iOS%E4%B8%8B%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E9%9F%B3%E9%87%8F/"/>
+    <id>http://bugdeveloper.gitee.io/iOS下更改系统音量/</id>
     <published>2017-09-30T13:29:38.000Z</published>
     <updated>2018-02-03T07:48:28.000Z</updated>
     
@@ -442,8 +468,8 @@
   
   <entry>
     <title>iOS拨打电话对话框问题解决</title>
-    <link href="http://bugdeveloper.gitee.io/2017/09/28/iOS%E6%8B%A8%E6%89%93%E7%94%B5%E8%AF%9D%E5%AF%B9%E8%AF%9D%E6%A1%86%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
-    <id>http://bugdeveloper.gitee.io/2017/09/28/iOS拨打电话对话框问题解决/</id>
+    <link href="http://bugdeveloper.gitee.io/iOS%E6%8B%A8%E6%89%93%E7%94%B5%E8%AF%9D%E5%AF%B9%E8%AF%9D%E6%A1%86%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    <id>http://bugdeveloper.gitee.io/iOS拨打电话对话框问题解决/</id>
     <published>2017-09-28T14:14:20.000Z</published>
     <updated>2018-02-03T07:47:13.000Z</updated>
     
@@ -468,8 +494,8 @@
   
   <entry>
     <title>小飞鱼项目有感</title>
-    <link href="http://bugdeveloper.gitee.io/2017/09/27/%E5%B0%8F%E9%A3%9E%E9%B1%BC%E9%A1%B9%E7%9B%AE%E6%9C%89%E6%84%9F/"/>
-    <id>http://bugdeveloper.gitee.io/2017/09/27/小飞鱼项目有感/</id>
+    <link href="http://bugdeveloper.gitee.io/%E5%B0%8F%E9%A3%9E%E9%B1%BC%E9%A1%B9%E7%9B%AE%E6%9C%89%E6%84%9F/"/>
+    <id>http://bugdeveloper.gitee.io/小飞鱼项目有感/</id>
     <published>2017-09-27T15:36:00.000Z</published>
     <updated>2018-02-03T07:45:39.000Z</updated>
     
@@ -495,8 +521,8 @@
   
   <entry>
     <title>iOS下日志记录</title>
-    <link href="http://bugdeveloper.gitee.io/2017/09/24/iOS%E4%B8%8B%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/"/>
-    <id>http://bugdeveloper.gitee.io/2017/09/24/iOS下日志记录/</id>
+    <link href="http://bugdeveloper.gitee.io/iOS%E4%B8%8B%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/"/>
+    <id>http://bugdeveloper.gitee.io/iOS下日志记录/</id>
     <published>2017-09-24T00:22:30.000Z</published>
     <updated>2018-01-12T13:37:44.000Z</updated>
     
@@ -515,28 +541,6 @@
     
     
       <category term="Log" scheme="http://bugdeveloper.gitee.io/tags/Log/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开源协议知多少</title>
-    <link href="http://bugdeveloper.gitee.io/2016/12/30/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE%E7%9F%A5%E5%A4%9A%E5%B0%91/"/>
-    <id>http://bugdeveloper.gitee.io/2016/12/30/开源协议知多少/</id>
-    <published>2016-12-30T15:20:28.000Z</published>
-    <updated>2018-02-03T07:45:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>越来越多的公司和个人在<code>GitHub</code>上开源他的代码，这是一种精神。为那些开源的公司和个人致敬、点赞。<br>当你在<code>GitHub</code>上创建一个项目的时候，就会让你选择一个<code>License</code>，像<code>MIT</code>，<code>BSD</code>，<code>GPL v2</code>等等。<br>但是这么多开源协议，你真的知道怎么选择吗？当你用到一个开源库的时候，你真的看清他的开源协议吗？<br>或许，目前来说，你并没有注意到这些。但是，随着国内对知识产权的越来越重视（从音乐就可窥见一斑），说不定哪一天你就会收到一封邮件。<br>好吧，说了这么多，我们还是用一张图来读懂那些开源协议吧。<br><a id="more"></a><br>乌克兰程序员 Paul Bagwell 画了一张分析图（下图为阮一峰汉化版）。</p><p>图片来自文章<a href="http://mp.weixin.qq.com/s?__biz=MjM5NzM0MjcyMQ==&amp;mid=2650069260&amp;idx=2&amp;sn=8822fbfddda7f81b979e41ca42ab4fdd&amp;chksm=bedb026289ac8b7454449bc8caf6f2439df2c99603e5a916b8277c1205af32987535d269079e&amp;mpshare=1&amp;scene=23&amp;srcid=1230XrysavNVmGdVJreRrs1H#rd" target="_blank" rel="noopener">别以为把你的代码上传到开源中国就算是开源了！先选择一个合适的 License 吧</a>。</p><p><img src="http://upload-images.jianshu.io/upload_images/606479-974f8447a1b8e05a.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="开源协议选择"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;越来越多的公司和个人在&lt;code&gt;GitHub&lt;/code&gt;上开源他的代码，这是一种精神。为那些开源的公司和个人致敬、点赞。&lt;br&gt;当你在&lt;code&gt;GitHub&lt;/code&gt;上创建一个项目的时候，就会让你选择一个&lt;code&gt;License&lt;/code&gt;，像&lt;code&gt;MIT&lt;/code&gt;，&lt;code&gt;BSD&lt;/code&gt;，&lt;code&gt;GPL v2&lt;/code&gt;等等。&lt;br&gt;但是这么多开源协议，你真的知道怎么选择吗？当你用到一个开源库的时候，你真的看清他的开源协议吗？&lt;br&gt;或许，目前来说，你并没有注意到这些。但是，随着国内对知识产权的越来越重视（从音乐就可窥见一斑），说不定哪一天你就会收到一封邮件。&lt;br&gt;好吧，说了这么多，我们还是用一张图来读懂那些开源协议吧。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="杂谈" scheme="http://bugdeveloper.gitee.io/categories/%E6%9D%82%E8%B0%88/"/>
-    
-    
-      <category term="开源协议" scheme="http://bugdeveloper.gitee.io/tags/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE/"/>
     
   </entry>
   
