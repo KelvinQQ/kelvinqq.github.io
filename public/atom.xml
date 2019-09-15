@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bugdeveloper.gitee.io/"/>
-  <updated>2019-01-30T14:05:11.000Z</updated>
+  <updated>2019-09-13T12:24:40.000Z</updated>
   <id>http://bugdeveloper.gitee.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GitHub Weekly-20190913</title>
+    <link href="http://bugdeveloper.gitee.io/GitHub-Weekly-20190913/"/>
+    <id>http://bugdeveloper.gitee.io/GitHub-Weekly-20190913/</id>
+    <published>2019-09-13T09:54:15.000Z</published>
+    <updated>2019-09-13T12:24:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/images/blog/GitHubWeekly-20190913/cover.jpg"><blockquote><p>图片来自 泼辣有图 By 神奈川冲浪李</p></blockquote><a id="more"></a><h1 id="Starscream"><a href="#Starscream" class="headerlink" title="Starscream"></a>Starscream</h1><p>一个使用<code>Swift</code>编写的<code>WebSocket(RFC 6455)</code>库，支持<code>iOS</code> 和 <code>MacOS</code>。支持<code>delegate</code>和<code>closures</code>。</p><p>项目地址：</p><blockquote><p><a href="https://github.com/daltoniam/Starscream" target="_blank" rel="noopener">https://github.com/daltoniam/Starscream</a></p></blockquote><h1 id="mall"><a href="#mall" class="headerlink" title="mall"></a>mall</h1><p><code>mall</code>项目致力于打造一个完整的电商系统，采用现阶段流行技术实现，包括前台商城系统及后台管理系统，基于<code>SpringBoot+MyBatis</code>实现。 前台商城系统包含首页门户、商品推荐、商品搜索、商品展示、购物车、订单流程、会员中心、客户服务、帮助中心等模块。 后台管理系统包含商品管理、订单管理、会员管理、促销管理、运营管理、内容管理、统计报表、财务管理、权限管理、设置等模块。</p><p>项目演示地址： </p><blockquote><p><a href="http://39.98.190.128/index.html" target="_blank" rel="noopener">http://39.98.190.128/index.html</a> </p></blockquote><img src="/images/blog/GitHubWeekly-20190913/mall-1.gif"><p>项目地址：</p><blockquote><p><a href="https://github.com/macrozheng/mall" target="_blank" rel="noopener">https://github.com/macrozheng/mall</a></p></blockquote><h1 id="OpenArkCompiler"><a href="#OpenArkCompiler" class="headerlink" title="OpenArkCompiler"></a>OpenArkCompiler</h1><p><code>OpenArkCompiler</code> 是来自华为方舟编译器的开源项目。<br>面向多设备、支持多语言的统一编程平台。</p><p>项目地址：</p><blockquote><p><a href="https://gitee.com/harmonyos/OpenArkCompiler" target="_blank" rel="noopener">https://gitee.com/harmonyos/OpenArkCompiler</a></p></blockquote><p>项目主页：</p><blockquote><p><a href="https://www.openarkcompiler.cn/home" target="_blank" rel="noopener">https://www.openarkcompiler.cn/home</a></p></blockquote><h1 id="baidu-netdisk-downloaderx"><a href="#baidu-netdisk-downloaderx" class="headerlink" title="baidu-netdisk-downloaderx"></a>baidu-netdisk-downloaderx</h1><p>是否还在为百度网盘下载限速发愁？那这一款项目绝对可以尝试一下。<code>BND</code> 是一款图形界面的百度网盘不限速下载器，支持 <code>Windows</code>、<code>Linux</code> 和 <code>Mac</code>。</p><img src="/images/blog/GitHubWeekly-20190913/bnd-1.png"><img src="/images/blog/GitHubWeekly-20190913/bnd-2.png"><img src="/images/blog/GitHubWeekly-20190913/bnd-3.png"><img src="/images/blog/GitHubWeekly-20190913/bnd-4.png"><p>项目地址：</p><blockquote><p><a href="https://github.com/b3log/baidu-netdisk-downloaderx" target="_blank" rel="noopener">https://github.com/b3log/baidu-netdisk-downloaderx</a></p></blockquote><h1 id="HanLP"><a href="#HanLP" class="headerlink" title="HanLP"></a>HanLP</h1><p><code>HanLP(Han Language Processing)</code>是一系列模型与算法组成的NLP工具包，由大快搜索主导并完全开源，目标是普及自然语言处理在生产环境中的应用。HanLP具备功能完善、性能高效、架构清晰、语料时新、可自定义的特点。</p><p>项目地址：</p><blockquote><p><a href="https://github.com/hankcs/HanLP" target="_blank" rel="noopener">https://github.com/hankcs/HanLP</a></p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这个缩写也是很Chinglish了。</span><br></pre></td></tr></table></figure><h1 id="Lookin"><a href="#Lookin" class="headerlink" title="Lookin"></a>Lookin</h1><p><code>Lookin</code> 是一款 macOS 软件，它可以查看与修改 <code>iOS App</code> 里的 <code>UI</code> 对象，类似于 <code>Xcode</code> 自带的 <code>UI Inspector</code> 工具，或另一款叫做 <code>Reveal</code> 的软件。</p><img src="/images/blog/GitHubWeekly-20190913/lookin-1.jpg"><blockquote><p><a href="https://lookin.work/" target="_blank" rel="noopener">https://lookin.work/</a></p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">免费的 Reveal 软件，良心之作。</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/images/blog/GitHubWeekly-20190913/cover.jpg&quot;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图片来自 泼辣有图 By 神奈川冲浪李&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="源码" scheme="http://bugdeveloper.gitee.io/categories/%E6%BA%90%E7%A0%81/"/>
+    
+    
+      <category term="Github" scheme="http://bugdeveloper.gitee.io/tags/Github/"/>
+    
+  </entry>
   
   <entry>
     <title>利用Xcode修改iPhone定位</title>
@@ -516,31 +541,6 @@
       <category term="电话" scheme="http://bugdeveloper.gitee.io/tags/%E7%94%B5%E8%AF%9D/"/>
     
       <category term="小飞鱼" scheme="http://bugdeveloper.gitee.io/tags/%E5%B0%8F%E9%A3%9E%E9%B1%BC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS下日志记录</title>
-    <link href="http://bugdeveloper.gitee.io/iOS%E4%B8%8B%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/"/>
-    <id>http://bugdeveloper.gitee.io/iOS下日志记录/</id>
-    <published>2017-09-24T00:22:30.000Z</published>
-    <updated>2018-01-12T13:37:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>iOS</code>开发中，一般大家都会自定义一个<code>DLog</code>的宏来代替<code>NSLog</code>，用来控制<code>Release</code>下的<code>Log</code>输出。<br>但是有以下几个弊端：</p><ul><li>没有日志分级。做过<code>Android</code>的都知道，<code>Android</code>可以分为5级，<code>Error</code>、<code>Warning</code>、<code>Info</code>、<code>Debug</code>、<code>Verbose</code>。</li><li>日志没法记录到文件，<code>Release</code>版本无法通过<code>Log</code>日志定位问题。<a id="more"></a>所以今天就推荐一个第三方库，<a href="https://github.com/CocoaLumberjack/CocoaLumberjack" target="_blank" rel="noopener">CocoaLumberjack</a>，完全满足以上需求，不但如此，还支持以下需求：</li><li>自定义Log文件的文件数、有效期、缓存大小<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fileLogger.logFileManager.maximumNumberOfLogFiles = 20;</span><br><span class="line">fileLogger.maximumFileSize = 1024 * 1024 * 5;</span><br><span class="line">fileLogger.rollingFrequency = 60 * 60 * 24;</span><br></pre></td></tr></table></figure></li></ul><p>具体使用大家还是看看<code>GitHub</code>上的介绍。<br>现在说一下集成中遇到的问题：<br>1 . 可以自定义输出<code>Log</code>的格式，需要实现<code>DDLogFormatter</code>协议，下面提供一个示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">- (NSString *)formatLogMessage:(DDLogMessage *)logMessage &#123;</span><br><span class="line">    </span><br><span class="line">    NSString *logLevel = nil;</span><br><span class="line">    switch (logMessage.flag) &#123;</span><br><span class="line">        case DDLogFlagError:</span><br><span class="line">            logLevel = @&quot;[E]&quot;;</span><br><span class="line">            break;</span><br><span class="line">        case DDLogFlagWarning:</span><br><span class="line">            logLevel = @&quot;[W]&quot;;</span><br><span class="line">            break;</span><br><span class="line">        case DDLogFlagInfo:</span><br><span class="line">            logLevel = @&quot;[I]&quot;;</span><br><span class="line">            break;</span><br><span class="line">        case DDLogFlagDebug:</span><br><span class="line">            logLevel = @&quot;[D]&quot;;</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">            logLevel = @&quot;[V]&quot;;</span><br><span class="line">            break;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    NSString *formatString = [NSString stringWithFormat:@&quot;%@ %@ [@%zd] %@ %@&quot;, [logMessage.timestamp descriptionWithLocale:[NSLocale currentLocale]], logLevel, logMessage.line, logMessage.function, logMessage.message];</span><br><span class="line">    return formatString;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>2 . 在单步调试时会发现，很多级别的日志不会立即显示到控制台中。在<code>DDLogMacros.h</code>中，我们可以看到以下几个宏定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#define DDLogError(frmt, ...)   LOG_MAYBE(NO,                LOG_LEVEL_DEF, DDLogFlagError,   0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)</span><br><span class="line">#define DDLogWarn(frmt, ...)    LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagWarning, 0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)</span><br><span class="line">#define DDLogInfo(frmt, ...)    LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagInfo,    0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)</span><br><span class="line">#define DDLogDebug(frmt, ...)   LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagDebug,   0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)</span><br><span class="line">#define DDLogVerbose(frmt, ...) LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagVerbose, 0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)</span><br></pre></td></tr></table></figure></p><p>你会发现<code>DDLogError</code>和其他的宏定义的第一个参数不是很一样，然后找到<code>LOG_ASYNC_ENABLED</code>的定义，这样就很明白了，如果你需要立即显示，把<code>LOG_ASYNC_ENABLED</code>的定义改为如下即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#ifndef LOG_ASYNC_ENABLED</span><br><span class="line">    #define LOG_ASYNC_ENABLED NO</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p><p>3 . 说一下<code>rollingFrequency</code>这个属性，看了源码后发现，作者是根据文件的创建时间来处理的，所以就会导致这样的问题，<code>1号15:00</code>创建的文件，然后用到<code>2号15:00</code>就会重新创建一个文件，所以会导致<code>2号的Log在15:00</code>被分为2个文件。</p><p>如果需要更高度的自定义，可以去<a href="https://github.com/CocoaLumberjack/CocoaLumberjack" target="_blank" rel="noopener">CocoaLumberjack</a>主页上看一下<code>README</code>。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;iOS&lt;/code&gt;开发中，一般大家都会自定义一个&lt;code&gt;DLog&lt;/code&gt;的宏来代替&lt;code&gt;NSLog&lt;/code&gt;，用来控制&lt;code&gt;Release&lt;/code&gt;下的&lt;code&gt;Log&lt;/code&gt;输出。&lt;br&gt;但是有以下几个弊端：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;没有日志分级。做过&lt;code&gt;Android&lt;/code&gt;的都知道，&lt;code&gt;Android&lt;/code&gt;可以分为5级，&lt;code&gt;Error&lt;/code&gt;、&lt;code&gt;Warning&lt;/code&gt;、&lt;code&gt;Info&lt;/code&gt;、&lt;code&gt;Debug&lt;/code&gt;、&lt;code&gt;Verbose&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;日志没法记录到文件，&lt;code&gt;Release&lt;/code&gt;版本无法通过&lt;code&gt;Log&lt;/code&gt;日志定位问题。
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://bugdeveloper.gitee.io/categories/iOS/"/>
-    
-    
-      <category term="Log" scheme="http://bugdeveloper.gitee.io/tags/Log/"/>
     
   </entry>
   

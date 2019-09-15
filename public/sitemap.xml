@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bugdeveloper.gitee.io/GitHub-Weekly-20190913/</loc>
+    
+    <lastmod>2019-09-13T12:24:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://bugdeveloper.gitee.io/%E5%88%A9%E7%94%A8Xcode%E4%BF%AE%E6%94%B9iPhone%E5%AE%9A%E4%BD%8D/</loc>
     
     <lastmod>2019-01-30T14:05:11.000Z</lastmod>
@@ -121,14 +128,14 @@
   </url>
   
   <url>
-    <loc>http://bugdeveloper.gitee.io/iOS%E5%88%9B%E5%BB%BA%E5%8D%95%E4%BE%8B/</loc>
+    <loc>http://bugdeveloper.gitee.io/iOS%E4%B8%8B%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E9%9F%B3%E9%87%8F/</loc>
     
     <lastmod>2018-02-03T07:48:28.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://bugdeveloper.gitee.io/iOS%E4%B8%8B%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E9%9F%B3%E9%87%8F/</loc>
+    <loc>http://bugdeveloper.gitee.io/iOS%E5%88%9B%E5%BB%BA%E5%8D%95%E4%BE%8B/</loc>
     
     <lastmod>2018-02-03T07:48:28.000Z</lastmod>
     
@@ -275,7 +282,7 @@
   </url>
   
   <url>
-    <loc>http://bugdeveloper.gitee.io/App%E5%86%85%E6%89%93%E5%BC%80AppStore/</loc>
+    <loc>http://bugdeveloper.gitee.io/iOS8%E4%B8%8BTabBarController%20push%E5%90%8E%E6%8E%A7%E4%BB%B6%E4%B8%8B%E7%A7%BB%E9%97%AA%E5%8A%A8/</loc>
     
     <lastmod>2018-01-12T13:37:44.000Z</lastmod>
     
@@ -289,7 +296,28 @@
   </url>
   
   <url>
+    <loc>http://bugdeveloper.gitee.io/iOS%E4%B8%8B%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/</loc>
+    
+    <lastmod>2018-01-12T13:37:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://bugdeveloper.gitee.io/GeoHash%E7%B3%BB%E5%88%97%20%E2%80%94%E2%80%94%20%E4%BA%8C%E3%80%81%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4/</loc>
+    
+    <lastmod>2018-01-12T13:37:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bugdeveloper.gitee.io/FFmpeg%20iOS%E5%BA%93%E7%BC%96%E8%AF%91%E4%B8%8E%E9%9B%86%E6%88%90/</loc>
+    
+    <lastmod>2018-01-12T13:37:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bugdeveloper.gitee.io/FFmpeg%E8%A7%A3%E7%A0%81%E6%B5%81%E7%A8%8B/</loc>
     
     <lastmod>2018-01-12T13:37:44.000Z</lastmod>
     
@@ -310,7 +338,7 @@
   </url>
   
   <url>
-    <loc>http://bugdeveloper.gitee.io/GeoHash%E7%B3%BB%E5%88%97%20%E2%80%94%E2%80%94%20%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/</loc>
+    <loc>http://bugdeveloper.gitee.io/App%E5%86%85%E6%89%93%E5%BC%80AppStore/</loc>
     
     <lastmod>2018-01-12T13:37:44.000Z</lastmod>
     
@@ -331,7 +359,7 @@
   </url>
   
   <url>
-    <loc>http://bugdeveloper.gitee.io/FFmpeg%20iOS%E5%BA%93%E7%BC%96%E8%AF%91%E4%B8%8E%E9%9B%86%E6%88%90/</loc>
+    <loc>http://bugdeveloper.gitee.io/Runtime%E5%9C%A8Storyboard%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
     
     <lastmod>2018-01-12T13:37:44.000Z</lastmod>
     
@@ -345,28 +373,7 @@
   </url>
   
   <url>
-    <loc>http://bugdeveloper.gitee.io/Runtime%E5%9C%A8Storyboard%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
-    
-    <lastmod>2018-01-12T13:37:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://bugdeveloper.gitee.io/FFmpeg%E8%A7%A3%E7%A0%81%E6%B5%81%E7%A8%8B/</loc>
-    
-    <lastmod>2018-01-12T13:37:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://bugdeveloper.gitee.io/iOS8%E4%B8%8BTabBarController%20push%E5%90%8E%E6%8E%A7%E4%BB%B6%E4%B8%8B%E7%A7%BB%E9%97%AA%E5%8A%A8/</loc>
-    
-    <lastmod>2018-01-12T13:37:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://bugdeveloper.gitee.io/iOS%E4%B8%8B%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/</loc>
+    <loc>http://bugdeveloper.gitee.io/GeoHash%E7%B3%BB%E5%88%97%20%E2%80%94%E2%80%94%20%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/</loc>
     
     <lastmod>2018-01-12T13:37:44.000Z</lastmod>
     
