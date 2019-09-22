@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bugdeveloper.gitee.io/"/>
-  <updated>2019-09-13T12:24:40.000Z</updated>
+  <updated>2019-09-21T13:21:06.000Z</updated>
   <id>http://bugdeveloper.gitee.io/</id>
   
   <author>
@@ -15,6 +15,106 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安利一个颜值最高的GitHub小程序</title>
+    <link href="http://bugdeveloper.gitee.io/%E5%AE%89%E5%88%A9%E4%B8%80%E4%B8%AA%E9%A2%9C%E5%80%BC%E6%9C%80%E9%AB%98%E7%9A%84GitHub%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://bugdeveloper.gitee.io/安利一个颜值最高的GitHub小程序/</id>
+    <published>2019-09-21T12:22:33.000Z</published>
+    <updated>2019-09-21T13:21:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/images/blog/安利一个颜值最高的GitHub小程序/cover.jpg"><blockquote><p>图片来自 泼辣有图</p></blockquote><a id="more"></a><p>作为一个码农，平时少不了要逛一逛<code>GitHub</code>（一个号称全球最大的同性交友网站）。</p><p>作为一个代码托管网站，他早已经超出了他的职责。</p><p>我们可以找到一些需要用到的开源库；</p><p>我们可以看到一些组织/个人的技术分享文章；</p><p>我们可以找到一些有趣的收集资料；</p><p>…</p><p>但是，在这个移动设备如此受欢迎的今天，<code>GitHub</code>竟然没有推出<code>App</code>，就算是码农，也不能整天都带着电脑啊。</p><p>好在<code>GitHub</code>提供了<code>Open API</code>供大家使用，让程序猿们自己解决。今天就给大家安利一个<code>颜值最高的GitHub小程序    ———— Gitter</code>。</p><p>该小程序已经支持以下功能：</p><ol><li>实时查看<code>Trending</code></li><li>显示用户列表</li><li>仓库和用户的搜索</li><li>仓库：详情展示、<code>README.md</code>展示、<code>Star/Unstar</code>、<code>Fork</code>、<code>Contributors</code>展示、查看仓库文件内容</li><li>开发者：<code>Follow/Unfollow</code>、显示用户的<code>followers/following</code></li><li><code>Issue</code>：查看<code>issue</code>列表、新增<code>issue</code>、新增<code>issue</code>评论</li><li>分享仓库、开发者</li><li>…</li></ol><p>不过由于微信小程序的限制，无法做<code>OAuth</code>认证，所以想要登录自己的账户稍微有点复杂：</p><ol><li>跳转获取<code>Token</code>链接：<a href="https://github.com/settings/tokens/new" target="_blank" rel="noopener">https://github.com/settings/tokens/new</a>，并使用个人账户密码登录</li><li>填写一个标签，勾选自己想要授权的功能清单后并授权，就可以获得一个<code>Token</code></li><li>复制<code>Token</code>并填写到小程序中，即可登录个人账户</li></ol><p>作者本着开源的精神，将整个项目源码同时放在了<code>GitHub</code>中，供大家学习讨论。整个项目采用 <code>Taro</code> 框架 + <code>Taro UI</code> 进行开发，小程序内数据均来自于 <code>GitHub Api v3</code>。并写了一篇文章来记录该小程序的开发过程：<a href="https://juejin.im/post/5c4c738ce51d4525211c129b" target="_blank" rel="noopener">Gitter - 高颜值GitHub小程序客户端诞生记</a>，真的是可玩、可学。</p><p>说了这么多，赶紧放几张颜值照片上来：</p><img src="/images/blog/安利一个颜值最高的GitHub小程序/xcx-1.png"><img src="/images/blog/安利一个颜值最高的GitHub小程序/xcx-2.png"><img src="/images/blog/安利一个颜值最高的GitHub小程序/xcx-3.png"><img src="/images/blog/安利一个颜值最高的GitHub小程序/xcx-4.png"><p>是不是很清爽呢？那就长按识别一下下方的小程序码赶紧使用吧。</p><img src="/images/blog/安利一个颜值最高的GitHub小程序/xcx-5.png"><p>对了，还有作者<code>2k+</code>标星的<code>repo</code>：</p><blockquote><p><a href="https://github.com/huangjianke/Gitter" target="_blank" rel="noopener">https://github.com/huangjianke/Gitter</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/images/blog/安利一个颜值最高的GitHub小程序/cover.jpg&quot;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图片来自 泼辣有图&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="开源" scheme="http://bugdeveloper.gitee.io/categories/%E5%BC%80%E6%BA%90/"/>
+    
+    
+      <category term="小程序" scheme="http://bugdeveloper.gitee.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生活不止眼前的苟且还有诗和远方的田野</title>
+    <link href="http://bugdeveloper.gitee.io/%E7%94%9F%E6%B4%BB%E4%B8%8D%E6%AD%A2%E7%9C%BC%E5%89%8D%E7%9A%84%E8%8B%9F%E4%B8%94%E8%BF%98%E6%9C%89%E8%AF%97%E5%92%8C%E8%BF%9C%E6%96%B9%E7%9A%84%E7%94%B0%E9%87%8E/"/>
+    <id>http://bugdeveloper.gitee.io/生活不止眼前的苟且还有诗和远方的田野/</id>
+    <published>2019-09-20T12:49:14.000Z</published>
+    <updated>2019-09-20T14:08:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/images/blog/生活不止眼前的苟且还有诗和远方的田野/potery.jpg"><blockquote><p>图片来自 泼辣有图</p></blockquote><a id="more"></a><p>中华文化，源远流长。古诗词文化最早可以追溯到三千多年前的《诗经》。</p><blockquote><p>蒹葭苍苍，白露为霜。所谓伊人，在水一方。</p></blockquote><p>作为中华文化的瑰宝，我们应该传承下去。然而一方面，古诗词文集的庞大使之与我们有一定的距离；另一方面，在这个人人机不离手的时代，早已经将古典文集抛之脑后。</p><p>为了让古诗词文化更好地适应移动互联网时代，更好的传承下去，项目作者整理了这个<code>repo</code>，让更多的人可以加入到古诗词文化的传播行列中。</p><p>目前这个<code>repo</code>已经收录了唐宋两朝近<code>1.4万</code>古诗人, 接近<code>5.5万</code>首唐诗加<code>26万</code>首宋诗. 两宋时期<code>1564</code>位词人，<code>21050</code>首词，号称<code>最全中华古诗词数据库</code>。目前该项目已经有<code>20k+</code>的<code>star</code>，由此可见，热爱古诗词的人还是有很多的。</p><p>项目中的古诗词数据最终是通过<code>JSON</code>格式分发，使得任何人可以更方便的使用，衍生出古诗词相关的产品，例如：古诗词网站、移动端应用、小程序等。目前通过该项目衍生的产品已经有如下：</p><ul><li><a href="https://shici.store" target="_blank" rel="noopener">中文诗歌主页</a>是一个基于浏览器的诗词网站， 包含唐诗三百首、宋词三百首等文集.</li><li><a href="https://github.com/animalize" target="_blank" rel="noopener">animalize</a> <strong>/</strong> <a href="https://github.com/animalize/QuanTangshi" target="_blank" rel="noopener">QuanTangshi</a>  <em>离线全唐诗 Android</em></li><li><a href="https://github.com/justdark" target="_blank" rel="noopener">justdark</a> <strong>/</strong> <a href="https://github.com/justdark/pytorch-poetry-gen" target="_blank" rel="noopener">pytorch-poetry-gen</a>  <em>a char-RNN based on pytorch</em></li><li><a href="https://github.com/Clover27" target="_blank" rel="noopener">Clover27</a> <strong>/</strong> <a href="https://github.com/Clover27/ancient-Chinese-poem-generator" target="_blank" rel="noopener">ancient-Chinese-poem-generator</a>  <em>Ancient-Chinese-Poem-Generator</em></li><li><a href="https://github.com/chinese-poetry" target="_blank" rel="noopener">chinese-poetry</a> <strong>/</strong> <a href="http://shici.store/poetry-calendar/" target="_blank" rel="noopener">poetry-calendar</a>  <em>诗词周历</em></li><li><a href="https://github.com/chenyuntc" target="_blank" rel="noopener">chenyuntc</a> <strong>/</strong> <a href="https://github.com/chenyuntc/pytorch-book/blob/master/chapter9-神经网络写诗(CharRNN" target="_blank" rel="noopener">pytorch-book</a>/) <em>简体唐诗生成(char-RNN), 可生成藏头诗,自定义诗歌意境,前缀等</em></li><li><a href="https://github.com/okcy1016" target="_blank" rel="noopener">okcy1016</a> <strong>/</strong> <a href="https://github.com/okcy1016/poetry-desktop/" target="_blank" rel="noopener">poetry-desktop</a> <em>诗词桌面</em></li><li><a href="https://github.com/huangjianke" target="_blank" rel="noopener">huangjianke</a> <strong>/</strong> <a href="https://github.com/huangjianke/weapp-poem/" target="_blank" rel="noopener">weapp-poem</a> <em>诗词墨客 小程序版</em></li></ul><p>如果你也对诗词感兴趣，也可以加入到该项目中，贡献一份自己的力量。</p><blockquote><p><a href="https://github.com/chinese-poetry/chinese-poetry" target="_blank" rel="noopener">https://github.com/chinese-poetry/chinese-poetry</a></p></blockquote><p>如果你有一个好的产品想法，赶紧下载并使用该项目中的数据，动手实现你的产品，加入到传播诗词文化的行列中。</p><p>如果你觉得自己只想赞助，那可以直接赞助给下方的二维码，留下你的联系方式，资金会直接进入<code>repo</code>作者的账户。</p><img src="/images/blog/生活不止眼前的苟且还有诗和远方的田野/wechat.png"><p>最后，给大家展示一下作者整理的高频词分析图：</p><h4 id="宋词高频词"><a href="#宋词高频词" class="headerlink" title="宋词高频词"></a>宋词高频词</h4><img src="/images/blog/生活不止眼前的苟且还有诗和远方的田野/potery-2.png"><h4 id="唐诗高频词"><a href="#唐诗高频词" class="headerlink" title="唐诗高频词"></a>唐诗高频词</h4><img src="/images/blog/生活不止眼前的苟且还有诗和远方的田野/potery-3.png"><h4 id="宋诗高频词"><a href="#宋诗高频词" class="headerlink" title="宋诗高频词"></a>宋诗高频词</h4><img src="/images/blog/生活不止眼前的苟且还有诗和远方的田野/potery-4.png">]]></content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/images/blog/生活不止眼前的苟且还有诗和远方的田野/potery.jpg&quot;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图片来自 泼辣有图&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="开源" scheme="http://bugdeveloper.gitee.io/categories/%E5%BC%80%E6%BA%90/"/>
+    
+    
+      <category term="古诗" scheme="http://bugdeveloper.gitee.io/tags/%E5%8F%A4%E8%AF%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub标星14k+，这个项目既能学Python又能抢票</title>
+    <link href="http://bugdeveloper.gitee.io/GitHub%E6%A0%87%E6%98%9F14k+%EF%BC%8C%E8%BF%99%E4%B8%AA%E9%A1%B9%E7%9B%AE%E6%97%A2%E8%83%BD%E5%AD%A6Python%E5%8F%88%E8%83%BD%E6%8A%A2%E7%A5%A8/"/>
+    <id>http://bugdeveloper.gitee.io/GitHub标星14k+，这个项目既能学Python又能抢票/</id>
+    <published>2019-09-18T11:32:39.000Z</published>
+    <updated>2019-09-18T12:31:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/images/blog/GitHub标星14k+，这个项目既能学Python又能抢票/cover.jpg"><blockquote><p>图片来自 泼辣有图 By yaojinm5</p></blockquote><a id="more"></a><p>是不是每一次计划好的远行最终都因为一张火车票而终止？<br>是不是每一次抢票都要发动朋友圈帮你加速？<br>是不是每一次买票都是交给黄牛一笔服务费？<br>这个项目告诉你，程序猿是如何抢票的。</p><p>项目地址：</p><blockquote><p><a href="https://github.com/testerSunshine/12306" target="_blank" rel="noopener">https://github.com/testerSunshine/12306</a></p></blockquote><h1 id="功能盘点"><a href="#功能盘点" class="headerlink" title="功能盘点"></a>功能盘点</h1><p>目前该项目已经支持以下功能：</p><ol><li>自动打码</li><li>自动登录</li><li>准点预售和捡漏</li><li>智能候补</li><li>邮件通知</li><li><code>server</code>酱通知</li></ol><h1 id="项目使用"><a href="#项目使用" class="headerlink" title="项目使用"></a>项目使用</h1><p>项目作者在<code>README</code>中详细介绍了整个项目的搭建方法，按照教程一步一步来，你一定可以搭建成功。<br>另外作者还整理了一些项目搭建和使用过程中遇到的一些常见问题，可谓是用心良苦。</p><h1 id="项目学习"><a href="#项目学习" class="headerlink" title="项目学习"></a>项目学习</h1><p>作为一个合格的开源项目，除了可供大家使用，作者还提供给大家共同学习的机会。</p><ol><li>作者把整个项目的思路画了出来，帮助大家更好的理解项目源码。</li></ol><img src="/images/blog/GitHub标星14k+，这个项目既能学Python又能抢票/12306-1.png"><ol start="2"><li>作者创建了一堆的<code>QQ</code>群，供大家学习交流。由于项目太过火爆，目前只有<code>8</code>群尚未满员: <code>620629239</code> 。</li></ol><p>看到这里，你是不是已经跃跃欲试了呢？赶紧去仓库下载学习吧~</p><blockquote><p>补充一个<code>server</code>酱的文档地址：<a href="http://sc.ftqq.com/3.version" target="_blank" rel="noopener">http://sc.ftqq.com/3.version</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/images/blog/GitHub标星14k+，这个项目既能学Python又能抢票/cover.jpg&quot;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图片来自 泼辣有图 By yaojinm5&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="源码" scheme="http://bugdeveloper.gitee.io/categories/%E6%BA%90%E7%A0%81/"/>
+    
+    
+      <category term="Github" scheme="http://bugdeveloper.gitee.io/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHubWeekly-20190921</title>
+    <link href="http://bugdeveloper.gitee.io/GitHubWeekly-20190921/"/>
+    <id>http://bugdeveloper.gitee.io/GitHubWeekly-20190921/</id>
+    <published>2019-09-14T09:20:26.000Z</published>
+    <updated>2019-09-14T10:12:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/images/blog/GitHubWeekly-20190913/cover.jpg"><blockquote><p>图片来自 泼辣有图 By 神奈川冲浪李</p></blockquote><a id="more"></a><h1 id="next"><a href="#next" class="headerlink" title="next"></a>next</h1><p>一套企业级中后台UI的解决方案，致力于解决设计师与前端在工作协同、产品体验一致性、开发效率方面的问题。</p><p>项目地址：</p><blockquote><p><a href="https://github.com/alibaba-fusion/next" target="_blank" rel="noopener">https://github.com/alibaba-fusion/next</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/images/blog/GitHubWeekly-20190913/cover.jpg&quot;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图片来自 泼辣有图 By 神奈川冲浪李&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="源码" scheme="http://bugdeveloper.gitee.io/categories/%E6%BA%90%E7%A0%81/"/>
+    
+    
+      <category term="Github" scheme="http://bugdeveloper.gitee.io/tags/Github/"/>
+    
+  </entry>
   
   <entry>
     <title>GitHub Weekly-20190913</title>
@@ -437,110 +537,6 @@
       <category term="Jenkins" scheme="http://bugdeveloper.gitee.io/tags/Jenkins/"/>
     
       <category term="Xcode9" scheme="http://bugdeveloper.gitee.io/tags/Xcode9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Swift4.0引用3.0第三方库</title>
-    <link href="http://bugdeveloper.gitee.io/Swift4.0%E5%BC%95%E7%94%A83.0%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"/>
-    <id>http://bugdeveloper.gitee.io/Swift4.0引用3.0第三方库/</id>
-    <published>2017-10-21T15:56:21.000Z</published>
-    <updated>2018-02-03T07:47:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>Swift</code>已经发布了<code>4.0</code>版本，在<code>Xcode9</code>中新建项目后，默认是使用<code>4.0</code>语法的。项目中的引用的第三方库，虽然有很多已经发不了<code>4.0</code>版本，但是还是有一些未及时更新的，那在作者未更新之前我们是否有更好的办法来使用这些第三方库呢？答案当然是<strong>肯定</strong>的，<code>Xcode9</code>中是同时支持<code>3.2</code>和<code>4.0</code>语法的。具体的设置可以看下图。</p><a id="more"></a><p><img src="http://upload-images.jianshu.io/upload_images/606479-6a28ff6e929e5fc6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设置Swift语法版本"></p><p>那么下面就说说如何设置同时支持<code>3.2</code>和<code>4.0</code>。</p><ol><li><p>项目中如果使用<code>Cocoapods</code>来管理第三方库时，可以找到不支持<code>4.0</code>语法的库所在<code>target</code>，然后找到<code>Swift Language Version</code>选项，改为<code>3.2</code>，然后就可以顺利编译通过了。<br><img src="http://upload-images.jianshu.io/upload_images/606479-6d08d94bf9c81df0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Cocoapods库设置"></p></li><li><p>如果还有以源码集成进项目的，那就选择<code>Edit &gt; Convert &gt; To Current Swift Syntax..</code>吧</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;Swift&lt;/code&gt;已经发布了&lt;code&gt;4.0&lt;/code&gt;版本，在&lt;code&gt;Xcode9&lt;/code&gt;中新建项目后，默认是使用&lt;code&gt;4.0&lt;/code&gt;语法的。项目中的引用的第三方库，虽然有很多已经发不了&lt;code&gt;4.0&lt;/code&gt;版本，但是还是有一些未及时更新的，那在作者未更新之前我们是否有更好的办法来使用这些第三方库呢？答案当然是&lt;strong&gt;肯定&lt;/strong&gt;的，&lt;code&gt;Xcode9&lt;/code&gt;中是同时支持&lt;code&gt;3.2&lt;/code&gt;和&lt;code&gt;4.0&lt;/code&gt;语法的。具体的设置可以看下图。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://bugdeveloper.gitee.io/categories/iOS/"/>
-    
-    
-      <category term="Swift4" scheme="http://bugdeveloper.gitee.io/tags/Swift4/"/>
-    
-      <category term="iOS" scheme="http://bugdeveloper.gitee.io/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS下更改系统音量</title>
-    <link href="http://bugdeveloper.gitee.io/iOS%E4%B8%8B%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E9%9F%B3%E9%87%8F/"/>
-    <id>http://bugdeveloper.gitee.io/iOS下更改系统音量/</id>
-    <published>2017-09-30T13:29:38.000Z</published>
-    <updated>2018-02-03T07:48:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>iOS</code>中，如果想更改系统音量，只有2个方法，一是使用私有方法；二是使用<code>MPVolumeView</code>。</p><p>私有方法不在我们的讨论范围之列，我们来讨论一下如何使用<code>MPVolumeView</code>。</p><p>用过一系列的音乐播放器都知道，添加一个<code>MPVolumeView</code>在<code>View</code>上，然后设置<code>showsVolumeSlider = YES</code>，就会有一个<code>SliderView</code>，用户滑动时，就能更改系统音量。</p><p>这样带来的问题就是，<br><a id="more"></a></p><ol><li><p>会显示一个<code>MPVolumeView</code>;</p></li><li><p>需要手动触发滑动事件;</p></li></ol><p>对于第一个问题很简单，<code>MPVolumeView</code>的<code>hidden</code>属性设置为<code>YES</code>即可；所以主要解决如何模拟用户手动滑动事件即可。</p><p>不多说，有了思路后就变得很简单了，下面奉上实现代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * 设置音量</span><br><span class="line"> */</span><br><span class="line">- (void)setVolume:(float)value &#123;</span><br><span class="line"></span><br><span class="line">    UISlider *volumeSlider = [self volumeSlider];</span><br><span class="line">    self.volumeView.showsVolumeSlider = YES; // 需要设置 showsVolumeSlider 为 YES</span><br><span class="line">    // 下面两句代码是关键</span><br><span class="line">    [volumeSlider setValue:value animated:NO];</span><br><span class="line">    [volumeSlider sendActionsForControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">    [self.volumeView sizeToFit];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (MPVolumeView *)volumeView &#123;</span><br><span class="line">    if (!_volumeView) &#123;</span><br><span class="line">        _volumeView = [[MPVolumeView alloc] init];</span><br><span class="line">        _volumeView.hidden = YES;</span><br><span class="line">        [self.window addSubview:_volumeView];</span><br><span class="line">    &#125;</span><br><span class="line">    return _volumeView;</span><br><span class="line">&#125;</span><br><span class="line">/*</span><br><span class="line"> * 遍历控件，拿到UISlider</span><br><span class="line"> */</span><br><span class="line">- (UISlider *)volumeSlider &#123;</span><br><span class="line">    UISlider* volumeSlider = nil;</span><br><span class="line">    for (UIView *view in [self.volumeView subviews]) &#123;</span><br><span class="line">        if ([view.class.description isEqualToString:@&quot;MPVolumeSlider&quot;])&#123;</span><br><span class="line">            volumeSlider = (UISlider *)view;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return volumeSlider;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;iOS&lt;/code&gt;中，如果想更改系统音量，只有2个方法，一是使用私有方法；二是使用&lt;code&gt;MPVolumeView&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;私有方法不在我们的讨论范围之列，我们来讨论一下如何使用&lt;code&gt;MPVolumeView&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;用过一系列的音乐播放器都知道，添加一个&lt;code&gt;MPVolumeView&lt;/code&gt;在&lt;code&gt;View&lt;/code&gt;上，然后设置&lt;code&gt;showsVolumeSlider = YES&lt;/code&gt;，就会有一个&lt;code&gt;SliderView&lt;/code&gt;，用户滑动时，就能更改系统音量。&lt;/p&gt;
-&lt;p&gt;这样带来的问题就是，&lt;br&gt;
-    
-    </summary>
-    
-      <category term="小飞鱼" scheme="http://bugdeveloper.gitee.io/categories/%E5%B0%8F%E9%A3%9E%E9%B1%BC/"/>
-    
-    
-      <category term="音量" scheme="http://bugdeveloper.gitee.io/tags/%E9%9F%B3%E9%87%8F/"/>
-    
-      <category term="MPVolumeView" scheme="http://bugdeveloper.gitee.io/tags/MPVolumeView/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS拨打电话对话框问题解决</title>
-    <link href="http://bugdeveloper.gitee.io/iOS%E6%8B%A8%E6%89%93%E7%94%B5%E8%AF%9D%E5%AF%B9%E8%AF%9D%E6%A1%86%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
-    <id>http://bugdeveloper.gitee.io/iOS拨打电话对话框问题解决/</id>
-    <published>2017-09-28T14:14:20.000Z</published>
-    <updated>2018-02-03T07:47:13.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>iOS</code>中拨打电话大家应该都很清楚了，如果还有什么疑问的话可以参考<a href="https://historyzhang.github.io/2014/09/05/iOS%E6%8B%A8%E6%89%93%E7%94%B5%E8%AF%9D/" target="_blank" rel="noopener">这篇文章</a>。但是<code>iOS10</code>的系统会先有个对话框确认，这与并不符合小飞鱼的需求。小飞鱼是由语音控制拨打电话，当用户查找到号码后，只需语音确认一次即可拨打电话，如果有系统的确认对话框，不仅多了一个步骤，而且还需要模拟点击对话框按钮事件，比较繁琐。<br><a id="more"></a><br>由于小飞鱼中，<code>App</code>和设备之间是通过<code>BLE</code>和传统蓝牙来连接的，而用过蓝牙耳机的都应该知道，可以之间通过蓝牙耳机拨打电话。所以方案就有了：<br><img src="http://upload-images.jianshu.io/upload_images/606479-40f070fe687c0735.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="小飞鱼打电话方案"><br>如上图，<code>App</code>端先通过<code>BLE</code>把号码发送给设备，然后设备通过传统蓝牙协议(<code>PBAP</code>中<code>AT Command</code>)，直接拨号即可，不会弹出确认框。</p><p>具体的指令如下：<code>AT#CW13012341234\r\n</code>；<br>整个<code>PBAP</code>协议参见<a href="http://file.yizimg.com/440517/2015090120595853.pdf" target="_blank" rel="noopener">这篇文章</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;iOS&lt;/code&gt;中拨打电话大家应该都很清楚了，如果还有什么疑问的话可以参考&lt;a href=&quot;https://historyzhang.github.io/2014/09/05/iOS%E6%8B%A8%E6%89%93%E7%94%B5%E8%AF%9D/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这篇文章&lt;/a&gt;。但是&lt;code&gt;iOS10&lt;/code&gt;的系统会先有个对话框确认，这与并不符合小飞鱼的需求。小飞鱼是由语音控制拨打电话，当用户查找到号码后，只需语音确认一次即可拨打电话，如果有系统的确认对话框，不仅多了一个步骤，而且还需要模拟点击对话框按钮事件，比较繁琐。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="小飞鱼" scheme="http://bugdeveloper.gitee.io/categories/%E5%B0%8F%E9%A3%9E%E9%B1%BC/"/>
-    
-    
-      <category term="打电话" scheme="http://bugdeveloper.gitee.io/tags/%E6%89%93%E7%94%B5%E8%AF%9D/"/>
-    
-      <category term="蓝牙" scheme="http://bugdeveloper.gitee.io/tags/%E8%93%9D%E7%89%99/"/>
-    
-      <category term="PBAP" scheme="http://bugdeveloper.gitee.io/tags/PBAP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小飞鱼项目有感</title>
-    <link href="http://bugdeveloper.gitee.io/%E5%B0%8F%E9%A3%9E%E9%B1%BC%E9%A1%B9%E7%9B%AE%E6%9C%89%E6%84%9F/"/>
-    <id>http://bugdeveloper.gitee.io/小飞鱼项目有感/</id>
-    <published>2017-09-27T15:36:00.000Z</published>
-    <updated>2018-02-03T07:45:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>小飞鱼是科大讯飞车载开发的一款智能行车助手，通过语音操作，让你在开车过程中解放双手，使你在开车过程中更加安全，体验更优。<br>小飞鱼目前支持使用语音导航，打电话，听音乐、节目、电台，查询天气、股票，还支持对话闲聊，让你的旅途不再寂寞。</p></blockquote><p>整个项目涉及蓝牙、BLE、电话、高德导航以及媒体播放，在项目过程中遇到很多坑，后续会逐步介绍项目中遇到的问题。<br><a id="more"></a><br>这里先在这里打个广告吧（微信文章直接长按识别二维码，或者可以点击底部阅读原文）。<br><a href="https://itunes.apple.com/us/app/%E5%B0%8F%E9%A3%9E%E9%B1%BC/id1207190161?mt=8" target="_blank" rel="noopener">iOS App下载地址</a><br><img src="http://upload-images.jianshu.io/upload_images/606479-de8292a52cc9a2c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="iOS App下载地址"></p><p><a href="https://item.jd.com/16895582778.html" target="_blank" rel="noopener">设备购买地址</a><br><img src="http://upload-images.jianshu.io/upload_images/606479-c26d5a8a702fb914.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设备购买地址"></p><h2 id="1-iOS拨打电话对话框问题解决"><a href="#1-iOS拨打电话对话框问题解决" class="headerlink" title="1. iOS拨打电话对话框问题解决"></a><a href="https://historyzhang.github.io/2017/09/28/iOS拨打电话对话框问题解决" target="_blank" rel="noopener">1. iOS拨打电话对话框问题解决</a></h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;小飞鱼是科大讯飞车载开发的一款智能行车助手，通过语音操作，让你在开车过程中解放双手，使你在开车过程中更加安全，体验更优。&lt;br&gt;小飞鱼目前支持使用语音导航，打电话，听音乐、节目、电台，查询天气、股票，还支持对话闲聊，让你的旅途不再寂寞。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;整个项目涉及蓝牙、BLE、电话、高德导航以及媒体播放，在项目过程中遇到很多坑，后续会逐步介绍项目中遇到的问题。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="小飞鱼" scheme="http://bugdeveloper.gitee.io/categories/%E5%B0%8F%E9%A3%9E%E9%B1%BC/"/>
-    
-    
-      <category term="电话" scheme="http://bugdeveloper.gitee.io/tags/%E7%94%B5%E8%AF%9D/"/>
-    
-      <category term="小飞鱼" scheme="http://bugdeveloper.gitee.io/tags/%E5%B0%8F%E9%A3%9E%E9%B1%BC/"/>
     
   </entry>
   
