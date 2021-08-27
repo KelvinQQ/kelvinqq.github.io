@@ -148,6 +148,246 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2015/05/19/App%E5%86%85%E6%89%93%E5%BC%80AppStore/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kelvin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="猿创日记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/05/19/App%E5%86%85%E6%89%93%E5%BC%80AppStore/" class="post-title-link" itemprop="url">App内打开AppStore</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-05-19 14:53:17" itemprop="dateCreated datePublished" datetime="2015-05-19T14:53:17+08:00">2015-05-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-26 19:56:30" itemprop="dateModified" datetime="2021-08-26T19:56:30+08:00">2021-08-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>iOS7以后可以在应用内打开AppStore展示另一个App.这样就可以直接下载了.</p>
+<p>我们只要使用这段代码就可以了.</p>
+<ul>
+<li>应用库文件</li>
+</ul>
+<p>我们可以这样引用: <code>@import StoreKit;</code></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/05/19/App%E5%86%85%E6%89%93%E5%BC%80AppStore/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2015/04/27/iOS8%E4%B8%8BTabBarController%20push%E5%90%8E%E6%8E%A7%E4%BB%B6%E4%B8%8B%E7%A7%BB%E9%97%AA%E5%8A%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kelvin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="猿创日记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/04/27/iOS8%E4%B8%8BTabBarController%20push%E5%90%8E%E6%8E%A7%E4%BB%B6%E4%B8%8B%E7%A7%BB%E9%97%AA%E5%8A%A8/" class="post-title-link" itemprop="url">iOS8下TabBarController push后控件下移闪动</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-04-27 16:04:40" itemprop="dateCreated datePublished" datetime="2015-04-27T16:04:40+08:00">2015-04-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-26 19:56:30" itemprop="dateModified" datetime="2021-08-26T19:56:30+08:00">2021-08-26</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>使用<code>TabBarController</code>后,如果push下一个页面需要隐藏<code>TabBar</code>,而下一个页面中有个控件设置<code>AutoLayout</code>的时候设置了和页面底部的距离,那么会有个闪烁动画,控件会以动画的形式下移44px.该现象只在iOS8中有,iOS7未发现.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/04/27/iOS8%E4%B8%8BTabBarController%20push%E5%90%8E%E6%8E%A7%E4%BB%B6%E4%B8%8B%E7%A7%BB%E9%97%AA%E5%8A%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2014/12/12/iOS%E6%B1%89%E5%AD%97%E8%BD%AC%E6%8B%BC%E9%9F%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kelvin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="猿创日记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2014/12/12/iOS%E6%B1%89%E5%AD%97%E8%BD%AC%E6%8B%BC%E9%9F%B3/" class="post-title-link" itemprop="url">iOS汉字转拼音</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-12-12 16:58:02" itemprop="dateCreated datePublished" datetime="2014-12-12T16:58:02+08:00">2014-12-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-26 19:56:30" itemprop="dateModified" datetime="2021-08-26T19:56:30+08:00">2021-08-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>汉字转拼音之前有很多人用的都是一个拼音库,<code>pinyin.h</code>和<code>pinyin.m</code>.用着还算方便吧.</p>
+<p>后来发现苹果的<code>framework</code>提供了方法.于是在这里记录下来.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/12/12/iOS%E6%B1%89%E5%AD%97%E8%BD%AC%E6%8B%BC%E9%9F%B3/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2014/12/04/UITableView%E5%A4%9A%E4%BD%99%E5%88%86%E5%89%B2%E7%BA%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -730,263 +970,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2014/08/04/iOS%E6%8F%90%E4%BA%A4AppStore%E6%97%B6%E6%8F%8F%E8%BF%B0%E7%BF%BB%E8%AF%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kelvin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="猿创日记">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2014/08/04/iOS%E6%8F%90%E4%BA%A4AppStore%E6%97%B6%E6%8F%8F%E8%BF%B0%E7%BF%BB%E8%AF%91/" class="post-title-link" itemprop="url">iOS提交AppStore时描述翻译</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-08-04 20:03:45" itemprop="dateCreated datePublished" datetime="2014-08-04T20:03:45+08:00">2014-08-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-26 19:56:30" itemprop="dateModified" datetime="2021-08-26T19:56:30+08:00">2021-08-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>提交AppStore时有很多选项,不过都是英文的.这里收集一下,以备查阅.</p>
-<table>
-<thead>
-<tr>
-<th align="left">AppleContent Descriptions</th>
-<th align="left">None</th>
-<th align="left">Infrequent/Mild</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">苹果内容描述</td>
-<td align="left">不存在</td>
-<td align="left">频繁或强烈的</td>
-</tr>
-</tbody></table>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/08/04/iOS%E6%8F%90%E4%BA%A4AppStore%E6%97%B6%E6%8F%8F%E8%BF%B0%E7%BF%BB%E8%AF%91/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2014/08/03/iOS%E5%90%88%E5%B9%B6%E7%9C%9F%E6%9C%BA%E5%92%8C%E6%A8%A1%E6%8B%9F%E5%99%A8%E9%9D%99%E6%80%81%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kelvin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="猿创日记">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2014/08/03/iOS%E5%90%88%E5%B9%B6%E7%9C%9F%E6%9C%BA%E5%92%8C%E6%A8%A1%E6%8B%9F%E5%99%A8%E9%9D%99%E6%80%81%E5%BA%93/" class="post-title-link" itemprop="url">iOS合并真机和模拟器静态库</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-08-03 10:48:38" itemprop="dateCreated datePublished" datetime="2014-08-03T10:48:38+08:00">2014-08-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-26 19:56:30" itemprop="dateModified" datetime="2021-08-26T19:56:30+08:00">2021-08-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>有时候会在真机和模拟器间切换,总是来回替换库到是很不方便.这样可以在开发的时候将真机和模拟器库何必为一个文件,等到发布的时候再替换为真机库即可.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/08/03/iOS%E5%90%88%E5%B9%B6%E7%9C%9F%E6%9C%BA%E5%92%8C%E6%A8%A1%E6%8B%9F%E5%99%A8%E9%9D%99%E6%80%81%E5%BA%93/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2014/08/02/hidesBottomBarWhenPushed%E7%94%A8%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kelvin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="猿创日记">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2014/08/02/hidesBottomBarWhenPushed%E7%94%A8%E6%B3%95/" class="post-title-link" itemprop="url">hidesBottomBarWhenPushed用法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-08-02 10:12:57" itemprop="dateCreated datePublished" datetime="2014-08-02T10:12:57+08:00">2014-08-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-26 19:56:30" itemprop="dateModified" datetime="2021-08-26T19:56:30+08:00">2021-08-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前两天看论坛又看到有人在问<code>hidesBottomBarWhenPushed</code>到底怎么用,为什么他用总是不对.所以在这里还是总结下,希望可以帮助更多的人.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/08/02/hidesBottomBarWhenPushed%E7%94%A8%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1055,18 +1038,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">57</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
