@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"kelvinzhang.gitee.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"kelvinqq.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="最近在使用CI平台打包时突然失败了，查看日志后发现是在exportArchive时失败了。之前一直都是好好地，升级了Xcode之后突然就不行了，提示如下信息： 123error: exportArchive: &quot;AppName.app&quot; requires a provisioning profile with the Push Notifications and App Gro">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xcode9下自动化编译错误">
-<meta property="og:url" content="https://kelvinzhang.gitee.io/2017/11/09/Xcode9%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/index.html">
+<meta property="og:url" content="https://kelvinqq.github.io/2017/11/09/Xcode9%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/index.html">
 <meta property="og:site_name" content="猿创日记">
 <meta property="og:description" content="最近在使用CI平台打包时突然失败了，查看日志后发现是在exportArchive时失败了。之前一直都是好好地，升级了Xcode之后突然就不行了，提示如下信息： 123error: exportArchive: &quot;AppName.app&quot; requires a provisioning profile with the Push Notifications and App Gro">
 <meta property="og:locale" content="zh_CN">
@@ -35,14 +35,14 @@
 <meta property="article:published_time" content="2017-11-09T14:03:20.000Z">
 <meta property="article:modified_time" content="2021-08-26T11:56:30.552Z">
 <meta property="article:author" content="Kelvin">
+<meta property="article:tag" content="自动打包">
 <meta property="article:tag" content="xcodebuild">
 <meta property="article:tag" content="Jenkins">
-<meta property="article:tag" content="自动打包">
 <meta property="article:tag" content="Xcode9">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/606479-78a2269f27ebb3ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
-<link rel="canonical" href="https://kelvinzhang.gitee.io/2017/11/09/Xcode9%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/">
+<link rel="canonical" href="https://kelvinqq.github.io/2017/11/09/Xcode9%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/">
 
 
 <script id="page-configurations">
@@ -163,7 +163,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kelvinzhang.gitee.io/2017/11/09/Xcode9%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/">
+    <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2017/11/09/Xcode9%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -244,9 +244,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/" rel="tag"># 自动打包</a>
               <a href="/tags/xcodebuild/" rel="tag"># xcodebuild</a>
               <a href="/tags/Jenkins/" rel="tag"># Jenkins</a>
-              <a href="/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/" rel="tag"># 自动打包</a>
               <a href="/tags/Xcode9/" rel="tag"># Xcode9</a>
           </div>
 
@@ -385,7 +385,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Kelvin</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -439,5 +439,5 @@
 
   
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"live2d-widget-models\\packages\\live2d-widget-model-miku"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
 </html>

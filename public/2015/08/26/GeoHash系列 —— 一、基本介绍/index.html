@@ -17,26 +17,26 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"kelvinzhang.gitee.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"kelvinqq.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="系列文章 GeoHash系列 —— 一、基本介绍 GeoHash系列 —— 二、算法步骤 引子目前很多的App都会使用到用户的地理位置信息，然后为用户提供相关服务，也就是我们所说的LBS。而LBS最基本的就是附近。所以就会有这样的一个问题： 什么样叫附近？ 简单来说，附件就是以我为圆心，radius为半径画一个圆，圆内的都叫附近。 然而事实并没有这么简单。比如我要在地图上找附近的餐馆，不可能说把所">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GeoHash系列 —— 一、基本介绍">
-<meta property="og:url" content="https://kelvinzhang.gitee.io/2015/08/26/GeoHash%E7%B3%BB%E5%88%97%20%E2%80%94%E2%80%94%20%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:url" content="https://kelvinqq.github.io/2015/08/26/GeoHash%E7%B3%BB%E5%88%97%20%E2%80%94%E2%80%94%20%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="猿创日记">
 <meta property="og:description" content="系列文章 GeoHash系列 —— 一、基本介绍 GeoHash系列 —— 二、算法步骤 引子目前很多的App都会使用到用户的地理位置信息，然后为用户提供相关服务，也就是我们所说的LBS。而LBS最基本的就是附近。所以就会有这样的一个问题： 什么样叫附近？ 简单来说，附件就是以我为圆心，radius为半径画一个圆，圆内的都叫附近。 然而事实并没有这么简单。比如我要在地图上找附近的餐馆，不可能说把所">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://kelvinzhang.gitee.io/images/blog/geohash_1.jpg">
-<meta property="og:image" content="https://kelvinzhang.gitee.io/images/blog/geohash_2.jpg">
+<meta property="og:image" content="https://kelvinqq.github.io/images/blog/geohash_1.jpg">
+<meta property="og:image" content="https://kelvinqq.github.io/images/blog/geohash_2.jpg">
 <meta property="article:published_time" content="2015-08-26T01:47:41.000Z">
 <meta property="article:modified_time" content="2021-08-26T11:56:30.537Z">
 <meta property="article:author" content="Kelvin">
 <meta property="article:tag" content="Geohash">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://kelvinzhang.gitee.io/images/blog/geohash_1.jpg">
+<meta name="twitter:image" content="https://kelvinqq.github.io/images/blog/geohash_1.jpg">
 
-<link rel="canonical" href="https://kelvinzhang.gitee.io/2015/08/26/GeoHash%E7%B3%BB%E5%88%97%20%E2%80%94%E2%80%94%20%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/">
+<link rel="canonical" href="https://kelvinqq.github.io/2015/08/26/GeoHash%E7%B3%BB%E5%88%97%20%E2%80%94%E2%80%94%20%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/">
 
 
 <script id="page-configurations">
@@ -157,7 +157,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kelvinzhang.gitee.io/2015/08/26/GeoHash%E7%B3%BB%E5%88%97%20%E2%80%94%E2%80%94%20%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/">
+    <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2015/08/26/GeoHash%E7%B3%BB%E5%88%97%20%E2%80%94%E2%80%94%20%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -388,7 +388,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Kelvin</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -442,5 +442,5 @@
 
   
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"live2d-widget-models\\packages\\live2d-widget-model-miku"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
 </html>
