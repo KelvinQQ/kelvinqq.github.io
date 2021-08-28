@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"kelvinqq.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="大家好，一周时间过得真快，本次主题依旧，推荐一些Github上的源码，排名不分先后。 一、答题App莫名的火了起来，随之而来的则是一系列的辅助软件，例如搜狗、百度，先后推出辅助答题助手。这档子事自然少不了广大程序员Show一把的场面，下面推荐的就是使用OCR做的辅助答题助手。 特点 使用手机模拟器，快速识别~ 浏览器自动搜索显示结果，搜索引擎可配置，结果一目了然~ 模拟器还能多开哦~全部答对奖金翻">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github源码推荐(1.15~1.21)">
+<meta property="og:url" content="https://kelvinqq.github.io/2018/01/21/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.15~1.21)/index.html">
+<meta property="og:site_name" content="猿创日记">
+<meta property="og:description" content="大家好，一周时间过得真快，本次主题依旧，推荐一些Github上的源码，排名不分先后。 一、答题App莫名的火了起来，随之而来的则是一系列的辅助软件，例如搜狗、百度，先后推出辅助答题助手。这档子事自然少不了广大程序员Show一把的场面，下面推荐的就是使用OCR做的辅助答题助手。 特点 使用手机模拟器，快速识别~ 浏览器自动搜索显示结果，搜索引擎可配置，结果一目了然~ 模拟器还能多开哦~全部答对奖金翻">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kelvinqq.github.io/images/blog/wenda-helper.gif">
+<meta property="og:image" content="https://kelvinqq.github.io/images/blog/CVCalendar.gif">
+<meta property="og:image" content="https://kelvinqq.github.io/images/blog/XLForm.gif">
+<meta property="og:image" content="https://kelvinqq.github.io/images/blog/Eureka-1.gif">
+<meta property="article:published_time" content="2018-01-21T03:21:06.000Z">
+<meta property="article:modified_time" content="2021-08-27T13:34:42.821Z">
+<meta property="article:author" content="Kelvin">
+<meta property="article:tag" content="Github">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kelvinqq.github.io/images/blog/wenda-helper.gif">
+
+<link rel="canonical" href="https://kelvinqq.github.io/2018/01/21/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.15~1.21)/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Github源码推荐(1.15~1.21) | 猿创日记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">猿创日记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/KelvinQQ" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2018/01/21/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.15~1.21)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/history.jpg">
+      <meta itemprop="name" content="Kelvin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="猿创日记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Github源码推荐(1.15~1.21)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-01-21 11:21:06" itemprop="dateCreated datePublished" datetime="2018-01-21T11:21:06+08:00">2018-01-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-27 21:34:42" itemprop="dateModified" datetime="2021-08-27T21:34:42+08:00">2021-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%BA%90%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">源码</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>大家好，一周时间过得真快，本次主题依旧，推荐一些<code>Github</code>上的源码，排名不分先后。</p>
+<h2 id="一、答题App莫名的火了起来，随之而来的则是一系列的辅助软件，例如搜狗、百度，先后推出辅助答题助手。这档子事自然少不了广大程序员Show一把的场面，下面推荐的就是使用OCR做的辅助答题助手。"><a href="#一、答题App莫名的火了起来，随之而来的则是一系列的辅助软件，例如搜狗、百度，先后推出辅助答题助手。这档子事自然少不了广大程序员Show一把的场面，下面推荐的就是使用OCR做的辅助答题助手。" class="headerlink" title="一、答题App莫名的火了起来，随之而来的则是一系列的辅助软件，例如搜狗、百度，先后推出辅助答题助手。这档子事自然少不了广大程序员Show一把的场面，下面推荐的就是使用OCR做的辅助答题助手。"></a>一、答题<code>App</code>莫名的火了起来，随之而来的则是一系列的辅助软件，例如搜狗、百度，先后推出辅助答题助手。这档子事自然少不了广大程序员<code>Show</code>一把的场面，下面推荐的就是使用<code>OCR</code>做的辅助答题助手。</h2><blockquote>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>使用手机模拟器，快速识别~</li>
+<li>浏览器自动搜索显示结果，搜索引擎可配置，结果一目了然~</li>
+<li>模拟器还能多开哦~全部答对奖金翻倍，遇到不会的可以多选乱蒙</li>
+<li>万英雄/知识超人/冲顶大会都支持哦~</li>
+</ul>
+</blockquote>
+<span id="more"></span>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><img src="/images/blog/wenda-helper.gif" class="">
+
+<h3 id="热度"><a href="#热度" class="headerlink" title="热度"></a>热度</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Star: 800+</span><br></pre></td></tr></table></figure>
+
+<h3 id="Github主页"><a href="#Github主页" class="headerlink" title="Github主页"></a><code>Github</code>主页</h3><p><a target="_blank" rel="noopener" href="https://github.com/rrdssfgcs/wenda-helper">https://github.com/rrdssfgcs/wenda-helper</a></p>
+<h2 id="二、上一周给大家推荐了一个Objective-C的日历，这次给大家推荐一个Swift4的日历控件，作者写的非常好棒，支持Storyboard。"><a href="#二、上一周给大家推荐了一个Objective-C的日历，这次给大家推荐一个Swift4的日历控件，作者写的非常好棒，支持Storyboard。" class="headerlink" title="二、上一周给大家推荐了一个Objective-C的日历，这次给大家推荐一个Swift4的日历控件，作者写的非常好棒，支持Storyboard。"></a>二、上一周给大家推荐了一个<code>Objective-C</code>的日历，这次给大家推荐一个<code>Swift4</code>的日历控件，作者写的非常好棒，支持<code>Storyboard</code>。</h2><h3 id="效果图-1"><a href="#效果图-1" class="headerlink" title="效果图"></a>效果图</h3><img src="/images/blog/CVCalendar.gif" class="">
+
+<h3 id="热度-1"><a href="#热度-1" class="headerlink" title="热度"></a>热度</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Star: 2800+</span><br></pre></td></tr></table></figure>
+
+<h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a>CocoaPods</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod &#x27;CVCalendar&#x27;, &#x27;~&gt; 1.6.0&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Github主页-1"><a href="#Github主页-1" class="headerlink" title="Github主页"></a><code>Github</code>主页</h3><p><a target="_blank" rel="noopener" href="https://github.com/CVCalendar/CVCalendar">https://github.com/CVCalendar/CVCalendar</a></p>
+<h2 id="三、使用Swift的时候是不是需要写好多的Extension呢？使用这个开源库后就再也不用劳心劳力的写很多的Extension了。"><a href="#三、使用Swift的时候是不是需要写好多的Extension呢？使用这个开源库后就再也不用劳心劳力的写很多的Extension了。" class="headerlink" title="三、使用Swift的时候是不是需要写好多的Extension呢？使用这个开源库后就再也不用劳心劳力的写很多的Extension了。"></a>三、使用<code>Swift</code>的时候是不是需要写好多的<code>Extension</code>呢？使用这个开源库后就再也不用劳心劳力的写很多的<code>Extension</code>了。</h2><blockquote>
+<p>SwifterSwift is a collection of over 500 native Swift extensions, with handy methods, syntactic sugar, and performance improvements for wide range of primitive data types, UIKit and Cocoa classes –over 500 in 1– for iOS, macOS, tvOS and watchOS.</p>
+</blockquote>
+<p>简直不要太强大，而且支持<code>Swift4</code>。</p>
+<h3 id="热度-2"><a href="#热度-2" class="headerlink" title="热度"></a>热度</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Star: 4200+</span><br></pre></td></tr></table></figure>
+
+<h3 id="CocoaPods-1"><a href="#CocoaPods-1" class="headerlink" title="CocoaPods"></a>CocoaPods</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod &#x27;SwifterSwift&#x27;</span><br></pre></td></tr></table></figure>
+<p>你也可以只集成部分<code>Extension</code>，例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod &#x27;SwifterSwift/Foundation&#x27;</span><br></pre></td></tr></table></figure>
+<p>具体还是去作者主页看吧。</p>
+<h3 id="Carthage"><a href="#Carthage" class="headerlink" title="Carthage"></a>Carthage</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github &quot;SwifterSwift/SwifterSwift&quot; ~&gt; 4.0</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Github主页-2"><a href="#Github主页-2" class="headerlink" title="Github主页"></a><code>Github</code>主页</h3><p><a target="_blank" rel="noopener" href="https://github.com/SwifterSwift/SwifterSwift">https://github.com/SwifterSwift/SwifterSwift</a></p>
+<h2 id="四、基本上所有的App都逃脱不了表单，设置、用户界面等待，都是一些枯燥无味的代码，却又要花费时间、精力去自定义每个Cell达到各式各样的效果，此次为大家推荐一个强大的表单开源库，最重要的是OC和Swift都有，各取所需。"><a href="#四、基本上所有的App都逃脱不了表单，设置、用户界面等待，都是一些枯燥无味的代码，却又要花费时间、精力去自定义每个Cell达到各式各样的效果，此次为大家推荐一个强大的表单开源库，最重要的是OC和Swift都有，各取所需。" class="headerlink" title="四、基本上所有的App都逃脱不了表单，设置、用户界面等待，都是一些枯燥无味的代码，却又要花费时间、精力去自定义每个Cell达到各式各样的效果，此次为大家推荐一个强大的表单开源库，最重要的是OC和Swift都有，各取所需。"></a>四、基本上所有的<code>App</code>都逃脱不了表单，设置、用户界面等待，都是一些枯燥无味的代码，却又要花费时间、精力去自定义每个<code>Cell</code>达到各式各样的效果，此次为大家推荐一个强大的表单开源库，最重要的是<code>OC</code>和<code>Swift</code>都有，各取所需。</h2><ul>
+<li><code>OC</code>版</li>
+</ul>
+<h3 id="效果图-2"><a href="#效果图-2" class="headerlink" title="效果图"></a>效果图</h3><img src="/images/blog/XLForm.gif" class="">
+
+<h3 id="热度-3"><a href="#热度-3" class="headerlink" title="热度"></a>热度</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Star: 4800+</span><br></pre></td></tr></table></figure>
+
+<h3 id="CocoaPods-2"><a href="#CocoaPods-2" class="headerlink" title="CocoaPods"></a>CocoaPods</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod &#x27;XLForm&#x27;, &#x27;~&gt; 4.0&#x27;</span><br></pre></td></tr></table></figure>
+<h3 id="Carthage-1"><a href="#Carthage-1" class="headerlink" title="Carthage"></a>Carthage</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github &quot;xmartlabs/XLForm&quot; ~&gt; 4.0</span><br></pre></td></tr></table></figure>
+
+<h3 id="Github主页-3"><a href="#Github主页-3" class="headerlink" title="Github主页"></a><code>Github</code>主页</h3><p><a target="_blank" rel="noopener" href="https://github.com/xmartlabs/XLForm">https://github.com/xmartlabs/XLForm</a></p>
+<ul>
+<li><code>Swift</code>版</li>
+</ul>
+<h3 id="效果图-3"><a href="#效果图-3" class="headerlink" title="效果图"></a>效果图</h3><img src="/images/blog/Eureka-1.gif" class="">
+
+<h3 id="热度-4"><a href="#热度-4" class="headerlink" title="热度"></a>热度</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Star: 7500+</span><br></pre></td></tr></table></figure>
+
+<h3 id="CocoaPods-3"><a href="#CocoaPods-3" class="headerlink" title="CocoaPods"></a>CocoaPods</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod &#x27;Eureka&#x27;</span><br></pre></td></tr></table></figure>
+<h3 id="Carthage-2"><a href="#Carthage-2" class="headerlink" title="Carthage"></a>Carthage</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github &quot;xmartlabs/Eureka&quot; ~&gt; 4.0</span><br></pre></td></tr></table></figure>
+
+<h3 id="Github主页-4"><a href="#Github主页-4" class="headerlink" title="Github主页"></a><code>Github</code>主页</h3><p><a target="_blank" rel="noopener" href="https://github.com/xmartlabs/Eureka">https://github.com/xmartlabs/Eureka</a></p>
+<p>关于使用方法这里就不再介绍了，项目主页上介绍的非常清楚，有需求的小伙伴就自己去查看吧~</p>
+<p>好了，暂时就推荐这么多给大家，下周我们再见。</p>
+<p>PS：本文中图片部分皆来自于作者<code>Github</code>主页，如有侵权，请告知。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/weixin_pay.jpg" alt="Kelvin 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/ali_pay.jpg" alt="Kelvin 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/weixin_blog.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">公众号</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Github/" rel="tag"># Github</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/01/14/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.8~1.14)/" rel="prev" title="Github源码推荐(1.8~1.14)">
+      <i class="fa fa-chevron-left"></i> Github源码推荐(1.8~1.14)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/01/27/Github%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.22-1.28)/" rel="next" title="Github源码推荐(1.22~1.28)">
+      Github源码推荐(1.22~1.28) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%AD%94%E9%A2%98App%E8%8E%AB%E5%90%8D%E7%9A%84%E7%81%AB%E4%BA%86%E8%B5%B7%E6%9D%A5%EF%BC%8C%E9%9A%8F%E4%B9%8B%E8%80%8C%E6%9D%A5%E7%9A%84%E5%88%99%E6%98%AF%E4%B8%80%E7%B3%BB%E5%88%97%E7%9A%84%E8%BE%85%E5%8A%A9%E8%BD%AF%E4%BB%B6%EF%BC%8C%E4%BE%8B%E5%A6%82%E6%90%9C%E7%8B%97%E3%80%81%E7%99%BE%E5%BA%A6%EF%BC%8C%E5%85%88%E5%90%8E%E6%8E%A8%E5%87%BA%E8%BE%85%E5%8A%A9%E7%AD%94%E9%A2%98%E5%8A%A9%E6%89%8B%E3%80%82%E8%BF%99%E6%A1%A3%E5%AD%90%E4%BA%8B%E8%87%AA%E7%84%B6%E5%B0%91%E4%B8%8D%E4%BA%86%E5%B9%BF%E5%A4%A7%E7%A8%8B%E5%BA%8F%E5%91%98Show%E4%B8%80%E6%8A%8A%E7%9A%84%E5%9C%BA%E9%9D%A2%EF%BC%8C%E4%B8%8B%E9%9D%A2%E6%8E%A8%E8%8D%90%E7%9A%84%E5%B0%B1%E6%98%AF%E4%BD%BF%E7%94%A8OCR%E5%81%9A%E7%9A%84%E8%BE%85%E5%8A%A9%E7%AD%94%E9%A2%98%E5%8A%A9%E6%89%8B%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">一、答题App莫名的火了起来，随之而来的则是一系列的辅助软件，例如搜狗、百度，先后推出辅助答题助手。这档子事自然少不了广大程序员Show一把的场面，下面推荐的就是使用OCR做的辅助答题助手。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-number">1.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%9B%BE"><span class="nav-number">1.2.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%83%AD%E5%BA%A6"><span class="nav-number">1.3.</span> <span class="nav-text">热度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github%E4%B8%BB%E9%A1%B5"><span class="nav-number">1.4.</span> <span class="nav-text">Github主页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%B8%8A%E4%B8%80%E5%91%A8%E7%BB%99%E5%A4%A7%E5%AE%B6%E6%8E%A8%E8%8D%90%E4%BA%86%E4%B8%80%E4%B8%AAObjective-C%E7%9A%84%E6%97%A5%E5%8E%86%EF%BC%8C%E8%BF%99%E6%AC%A1%E7%BB%99%E5%A4%A7%E5%AE%B6%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AASwift4%E7%9A%84%E6%97%A5%E5%8E%86%E6%8E%A7%E4%BB%B6%EF%BC%8C%E4%BD%9C%E8%80%85%E5%86%99%E7%9A%84%E9%9D%9E%E5%B8%B8%E5%A5%BD%E6%A3%92%EF%BC%8C%E6%94%AF%E6%8C%81Storyboard%E3%80%82"><span class="nav-number">2.</span> <span class="nav-text">二、上一周给大家推荐了一个Objective-C的日历，这次给大家推荐一个Swift4的日历控件，作者写的非常好棒，支持Storyboard。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%9B%BE-1"><span class="nav-number">2.1.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%83%AD%E5%BA%A6-1"><span class="nav-number">2.2.</span> <span class="nav-text">热度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CocoaPods"><span class="nav-number">2.3.</span> <span class="nav-text">CocoaPods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github%E4%B8%BB%E9%A1%B5-1"><span class="nav-number">2.4.</span> <span class="nav-text">Github主页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%BD%BF%E7%94%A8Swift%E7%9A%84%E6%97%B6%E5%80%99%E6%98%AF%E4%B8%8D%E6%98%AF%E9%9C%80%E8%A6%81%E5%86%99%E5%A5%BD%E5%A4%9A%E7%9A%84Extension%E5%91%A2%EF%BC%9F%E4%BD%BF%E7%94%A8%E8%BF%99%E4%B8%AA%E5%BC%80%E6%BA%90%E5%BA%93%E5%90%8E%E5%B0%B1%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E5%8A%B3%E5%BF%83%E5%8A%B3%E5%8A%9B%E7%9A%84%E5%86%99%E5%BE%88%E5%A4%9A%E7%9A%84Extension%E4%BA%86%E3%80%82"><span class="nav-number">3.</span> <span class="nav-text">三、使用Swift的时候是不是需要写好多的Extension呢？使用这个开源库后就再也不用劳心劳力的写很多的Extension了。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%83%AD%E5%BA%A6-2"><span class="nav-number">3.1.</span> <span class="nav-text">热度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CocoaPods-1"><span class="nav-number">3.2.</span> <span class="nav-text">CocoaPods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Carthage"><span class="nav-number">3.3.</span> <span class="nav-text">Carthage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github%E4%B8%BB%E9%A1%B5-2"><span class="nav-number">3.4.</span> <span class="nav-text">Github主页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%9F%BA%E6%9C%AC%E4%B8%8A%E6%89%80%E6%9C%89%E7%9A%84App%E9%83%BD%E9%80%83%E8%84%B1%E4%B8%8D%E4%BA%86%E8%A1%A8%E5%8D%95%EF%BC%8C%E8%AE%BE%E7%BD%AE%E3%80%81%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E7%AD%89%E5%BE%85%EF%BC%8C%E9%83%BD%E6%98%AF%E4%B8%80%E4%BA%9B%E6%9E%AF%E7%87%A5%E6%97%A0%E5%91%B3%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%8D%B4%E5%8F%88%E8%A6%81%E8%8A%B1%E8%B4%B9%E6%97%B6%E9%97%B4%E3%80%81%E7%B2%BE%E5%8A%9B%E5%8E%BB%E8%87%AA%E5%AE%9A%E4%B9%89%E6%AF%8F%E4%B8%AACell%E8%BE%BE%E5%88%B0%E5%90%84%E5%BC%8F%E5%90%84%E6%A0%B7%E7%9A%84%E6%95%88%E6%9E%9C%EF%BC%8C%E6%AD%A4%E6%AC%A1%E4%B8%BA%E5%A4%A7%E5%AE%B6%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84%E8%A1%A8%E5%8D%95%E5%BC%80%E6%BA%90%E5%BA%93%EF%BC%8C%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E6%98%AFOC%E5%92%8CSwift%E9%83%BD%E6%9C%89%EF%BC%8C%E5%90%84%E5%8F%96%E6%89%80%E9%9C%80%E3%80%82"><span class="nav-number">4.</span> <span class="nav-text">四、基本上所有的App都逃脱不了表单，设置、用户界面等待，都是一些枯燥无味的代码，却又要花费时间、精力去自定义每个Cell达到各式各样的效果，此次为大家推荐一个强大的表单开源库，最重要的是OC和Swift都有，各取所需。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%9B%BE-2"><span class="nav-number">4.1.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%83%AD%E5%BA%A6-3"><span class="nav-number">4.2.</span> <span class="nav-text">热度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CocoaPods-2"><span class="nav-number">4.3.</span> <span class="nav-text">CocoaPods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Carthage-1"><span class="nav-number">4.4.</span> <span class="nav-text">Carthage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github%E4%B8%BB%E9%A1%B5-3"><span class="nav-number">4.5.</span> <span class="nav-text">Github主页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%9B%BE-3"><span class="nav-number">4.6.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%83%AD%E5%BA%A6-4"><span class="nav-number">4.7.</span> <span class="nav-text">热度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CocoaPods-3"><span class="nav-number">4.8.</span> <span class="nav-text">CocoaPods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Carthage-2"><span class="nav-number">4.9.</span> <span class="nav-text">Carthage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github%E4%B8%BB%E9%A1%B5-4"><span class="nav-number">4.10.</span> <span class="nav-text">Github主页</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kelvin"
+      src="/images/history.jpg">
+  <p class="site-author-name" itemprop="name">Kelvin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/KelvinQQ" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KelvinQQ" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:history_zq@163.com" title="E-Mail → mailto:history_zq@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kelvin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

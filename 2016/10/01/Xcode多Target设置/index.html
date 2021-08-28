@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"kelvinqq.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="有时候一个项目会分为多个版本，比如免费版、收费版，或者对于不同的客户定制不同版本。但是大体上功能都是差不多，只是部分页面稍有区别。如果每个版本都建一个工程又显得麻烦了，都放在一个 Target 又得写一堆的代码去区分甄别，而且在打包的时候很可能因为参数配置错误需要一而再、再而三的打包。 这个时候我们就可以用多 Target 来操作了。具体方法且听我一一道来。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xcode多Target设置">
+<meta property="og:url" content="https://kelvinqq.github.io/2016/10/01/Xcode%E5%A4%9ATarget%E8%AE%BE%E7%BD%AE/index.html">
+<meta property="og:site_name" content="猿创日记">
+<meta property="og:description" content="有时候一个项目会分为多个版本，比如免费版、收费版，或者对于不同的客户定制不同版本。但是大体上功能都是差不多，只是部分页面稍有区别。如果每个版本都建一个工程又显得麻烦了，都放在一个 Target 又得写一堆的代码去区分甄别，而且在打包的时候很可能因为参数配置错误需要一而再、再而三的打包。 这个时候我们就可以用多 Target 来操作了。具体方法且听我一一道来。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/606479-c9844bad20dccae2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/606479-2225d4c608db3235.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/606479-a2f374ee5f20b7e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/606479-0f87e7da284493a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/606479-95d137145edbd4e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/606479-7f3317bd714c2300.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/606479-b368c5be845363d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/606479-edcc35f26db7e23c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/606479-4245677ed7eec517.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/606479-08ca83fc44225585.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="article:published_time" content="2016-10-01T14:32:11.000Z">
+<meta property="article:modified_time" content="2021-08-27T13:34:42.823Z">
+<meta property="article:author" content="Kelvin">
+<meta property="article:tag" content="多Target">
+<meta property="article:tag" content="多版本">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/606479-c9844bad20dccae2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+<link rel="canonical" href="https://kelvinqq.github.io/2016/10/01/Xcode%E5%A4%9ATarget%E8%AE%BE%E7%BD%AE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Xcode多Target设置 | 猿创日记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">猿创日记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/KelvinQQ" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2016/10/01/Xcode%E5%A4%9ATarget%E8%AE%BE%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/history.jpg">
+      <meta itemprop="name" content="Kelvin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="猿创日记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Xcode多Target设置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-10-01 22:32:11" itemprop="dateCreated datePublished" datetime="2016-10-01T22:32:11+08:00">2016-10-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-27 21:34:42" itemprop="dateModified" datetime="2021-08-27T21:34:42+08:00">2021-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>有时候一个项目会分为多个版本，比如免费版、收费版，或者对于不同的客户定制不同版本。但是大体上功能都是差不多，只是部分页面稍有区别。如果每个版本都建一个工程又显得麻烦了，都放在一个 <code>Target</code> 又得写一堆的代码去区分甄别，而且在打包的时候很可能因为参数配置错误需要一而再、再而三的打包。</p>
+<p>这个时候我们就可以用多 <code>Target</code> 来操作了。具体方法且听我一一道来。</p>
+<span id="more"></span>
+
+<hr>
+<h3 id="首先我们得有一个工程，这里我就新建一个基本的模板工程。"><a href="#首先我们得有一个工程，这里我就新建一个基本的模板工程。" class="headerlink" title="* 首先我们得有一个工程，这里我就新建一个基本的模板工程。"></a>* 首先我们得有一个工程，这里我就新建一个基本的模板工程。</h3><p>工程的样子应该是这样。（我已经升级到 <code>Xcode8</code> 了，有什么不同之处请不要在意。）</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/606479-c9844bad20dccae2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="QQ20161001-0.png"></p>
+<h3 id="然后我们进入工程设置，右击中间的-TARGETS-，会有个选择让你-Duplicate-还是-Delete-，这里我们选择-Duplicate。"><a href="#然后我们进入工程设置，右击中间的-TARGETS-，会有个选择让你-Duplicate-还是-Delete-，这里我们选择-Duplicate。" class="headerlink" title="*  然后我们进入工程设置，右击中间的 TARGETS ，会有个选择让你 Duplicate 还是 Delete ，这里我们选择 Duplicate。"></a>*  然后我们进入工程设置，右击中间的 <code>TARGETS</code> ，会有个选择让你 <code>Duplicate</code> 还是 <code>Delete</code> ，这里我们选择 <code>Duplicate</code>。</h3><p><img src="http://upload-images.jianshu.io/upload_images/606479-2225d4c608db3235.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="QQ20161001-1.png"></p>
+<p>结果就是下面这个样子了，多个一个 <code>Target</code> 叫 <code>MultiTarget copy</code> ，还多了一个 <code>plist</code> 文件叫 <code>MultiTarget copy-Info.plist</code>。<br><img src="http://upload-images.jianshu.io/upload_images/606479-a2f374ee5f20b7e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="QQ20161001-2.png"></p>
+<h4 id="接下来首先想到的应该是改名字，毕竟-XXX-copy-不怎么友好。"><a href="#接下来首先想到的应该是改名字，毕竟-XXX-copy-不怎么友好。" class="headerlink" title="* 接下来首先想到的应该是改名字，毕竟 XXX copy 不怎么友好。"></a>* 接下来首先想到的应该是改名字，毕竟 <code>XXX copy</code> 不怎么友好。</h4><p>目前我所知道的方法只有一个一个的改。</p>
+<p>囧。</p>
+<p>如果你有好的方法，可以留言给我。</p>
+<p>改完 <code>plist</code> 的名字后，需要在工程设置里面重新选择一下 <code>Info.plist</code> 。改完之后就像下图一样。我列了一下我改的几个地方。但是我记得早期版本的 <code>Xcode</code> 好像还需要修改 <code>Build Settings</code> 里面的一些东西。不过我的 <code>Xcode8</code> 好像不需要了。大家在做的时候注意一下。<br><img src="http://upload-images.jianshu.io/upload_images/606479-0f87e7da284493a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="QQ20161001-3.png"></p>
+<p><code>PS：忘了修改Bundle Identifier了，大家记得改一下</code></p>
+<h3 id="最后一步就是做版本区分了。"><a href="#最后一步就是做版本区分了。" class="headerlink" title="* 最后一步就是做版本区分了。"></a>* 最后一步就是做版本区分了。</h3><p>首先我们在 <code>PRO</code> 版本中定义一个宏 <code>PRO_VERSION</code>，写在 <code>Build Settings</code> 里面。一定记得先选择 <code>PRO</code> <code>Target</code>。这个作用就是告诉编译器，我们在编译该 <code>Target</code> 时会有个全局的宏叫做 <code>PRO_VERSION</code>。这个时候我们就可以利用这个宏来做一些代码区分了。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/606479-95d137145edbd4e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="QQ20161001-4.png"></p>
+<h3 id="最后我们测试一下。"><a href="#最后我们测试一下。" class="headerlink" title="* 最后我们测试一下。"></a>* 最后我们测试一下。</h3><p>我们在 <code>ViewController</code> 里面增加一个 <code>UILabel</code> ，方便起见，我就直接写 <code>frame</code> 了，在两个不同版本显示不同的文本。代码如下。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, CGRectGetWidth([UIScreen mainScreen].bounds), 80)];</span><br><span class="line">    label.textAlignment = NSTextAlignmentCenter;</span><br><span class="line">    [self.view addSubview:label];</span><br><span class="line">    </span><br><span class="line">#ifdef PRO_VERSION</span><br><span class="line">    label.text = @&quot;这是PRO版本&quot;;</span><br><span class="line">#else</span><br><span class="line">    label.text = @&quot;这是NORMAL版本&quot;;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<p>当然，编译哪个版本需要选择对应的 <code>Scheme</code>。下面放两张截图。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/606479-7f3317bd714c2300.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="PRO版本"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/606479-b368c5be845363d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="NORMAL版本
+![Uploading QQ20161001-9_892356.png . . .]
+"></p>
+<h3 id="还有个事情就是图标，其实也可以设置的。"><a href="#还有个事情就是图标，其实也可以设置的。" class="headerlink" title="* 还有个事情就是图标，其实也可以设置的。"></a>* 还有个事情就是图标，其实也可以设置的。</h3><p>打开 <code>Assets.xcassets</code>，会发现已经有一个 <code>AppIcon</code> 了，我们再<code>copy</code>一份出来，然后改个名字，换一下图标，就是这样的效果。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/606479-edcc35f26db7e23c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="QQ20161001-5.png"></p>
+<p>当然并没有结束，因为我们只是添加了资源，并没有用到。还是在工程设置里面，有个 <code>App Icons Source</code> ，选择一下就可以了。当然，我们还可以配置启动画面等等，这里就不演示了。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/606479-4245677ed7eec517.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="QQ20161001-6.png"></p>
+<p>最后放一张两个 <code>App</code> 的图标，注意修改 <code>Bundle Identifier</code>，不然你不会运行出两个 <code>App</code> 的。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/606479-08ca83fc44225585.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="QQ20161001-9.png"></p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/weixin_pay.jpg" alt="Kelvin 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/ali_pay.jpg" alt="Kelvin 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/weixin_blog.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">公众号</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%A4%9ATarget/" rel="tag"># 多Target</a>
+              <a href="/tags/%E5%A4%9A%E7%89%88%E6%9C%AC/" rel="tag"># 多版本</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/09/30/FFmpeg%E8%A7%A3%E7%A0%81%E6%B5%81%E7%A8%8B/" rel="prev" title="FFmpeg解码流程">
+      <i class="fa fa-chevron-left"></i> FFmpeg解码流程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/11/01/iOS10%E4%B8%8B%E4%BD%BF%E7%94%A8AutoLayout%E5%8A%A8%E7%94%BB%E5%A4%B1%E6%95%88%E8%A7%A3%E5%86%B3/" rel="next" title="iOS10下使用AutoLayout动画失效解决">
+      iOS10下使用AutoLayout动画失效解决 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E6%88%91%E4%BB%AC%E5%BE%97%E6%9C%89%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%EF%BC%8C%E8%BF%99%E9%87%8C%E6%88%91%E5%B0%B1%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%A8%A1%E6%9D%BF%E5%B7%A5%E7%A8%8B%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">* 首先我们得有一个工程，这里我就新建一个基本的模板工程。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E6%88%91%E4%BB%AC%E8%BF%9B%E5%85%A5%E5%B7%A5%E7%A8%8B%E8%AE%BE%E7%BD%AE%EF%BC%8C%E5%8F%B3%E5%87%BB%E4%B8%AD%E9%97%B4%E7%9A%84-TARGETS-%EF%BC%8C%E4%BC%9A%E6%9C%89%E4%B8%AA%E9%80%89%E6%8B%A9%E8%AE%A9%E4%BD%A0-Duplicate-%E8%BF%98%E6%98%AF-Delete-%EF%BC%8C%E8%BF%99%E9%87%8C%E6%88%91%E4%BB%AC%E9%80%89%E6%8B%A9-Duplicate%E3%80%82"><span class="nav-number">2.</span> <span class="nav-text">*  然后我们进入工程设置，右击中间的 TARGETS ，会有个选择让你 Duplicate 还是 Delete ，这里我们选择 Duplicate。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E9%A6%96%E5%85%88%E6%83%B3%E5%88%B0%E7%9A%84%E5%BA%94%E8%AF%A5%E6%98%AF%E6%94%B9%E5%90%8D%E5%AD%97%EF%BC%8C%E6%AF%95%E7%AB%9F-XXX-copy-%E4%B8%8D%E6%80%8E%E4%B9%88%E5%8F%8B%E5%A5%BD%E3%80%82"><span class="nav-number">2.1.</span> <span class="nav-text">* 接下来首先想到的应该是改名字，毕竟 XXX copy 不怎么友好。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E4%B8%80%E6%AD%A5%E5%B0%B1%E6%98%AF%E5%81%9A%E7%89%88%E6%9C%AC%E5%8C%BA%E5%88%86%E4%BA%86%E3%80%82"><span class="nav-number">3.</span> <span class="nav-text">* 最后一步就是做版本区分了。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E6%88%91%E4%BB%AC%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B%E3%80%82"><span class="nav-number">4.</span> <span class="nav-text">* 最后我们测试一下。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%98%E6%9C%89%E4%B8%AA%E4%BA%8B%E6%83%85%E5%B0%B1%E6%98%AF%E5%9B%BE%E6%A0%87%EF%BC%8C%E5%85%B6%E5%AE%9E%E4%B9%9F%E5%8F%AF%E4%BB%A5%E8%AE%BE%E7%BD%AE%E7%9A%84%E3%80%82"><span class="nav-number">5.</span> <span class="nav-text">* 还有个事情就是图标，其实也可以设置的。</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kelvin"
+      src="/images/history.jpg">
+  <p class="site-author-name" itemprop="name">Kelvin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/KelvinQQ" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KelvinQQ" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:history_zq@163.com" title="E-Mail → mailto:history_zq@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kelvin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
