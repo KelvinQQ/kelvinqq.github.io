@@ -1,6 +1,6 @@
 ---
 title: Tinker集成踩坑指北
-date: 2021-08-27 18:06:56
+date: 2021-08-24 18:06:56
 categories: 
   - Android
 tags:
@@ -20,6 +20,8 @@ dependencies {
         classpath "com.tencent.bugly:tinker-support:1.1.5"
     }
 ```
+
+<!--more-->
 
 ## 错误二
 > 补丁文件缺失必需字段：Created-Time、Created-By、YaPatchType、VersionName、VersionCode、From、To，请检查补丁文件后重试！

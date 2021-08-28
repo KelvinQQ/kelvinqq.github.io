@@ -115,7 +115,7 @@ live2d:
   tagMode: false
   log: false
   model:
-    use: live2d-widget-models\packages\live2d-widget-model-miku
+    use: live2d-widget-model-miku
   display:
     position: right
     width: 150
@@ -123,21 +123,3 @@ live2d:
   mobile:
     show: true
     
-jsonContent:
-    meta: false
-    pages: false
-    posts:
-      title: true
-      date: true
-      path: true
-      text: false
-      raw: false
-      content: false
-      slug: false
-      updated: false
-      comments: false
-      link: false
-      permalink: false
-      excerpt: false
-      categories: false
-      tags: true
