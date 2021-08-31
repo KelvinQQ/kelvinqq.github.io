@@ -120,6 +120,21 @@
     <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
   </ul>
 </nav>
 
@@ -150,6 +165,75 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2021/08/31/%E4%B8%80%E6%AC%A1%E4%B8%8A%E7%BA%BF%E7%BF%BB%E8%BD%A6%E8%AE%A9%E6%88%91%E6%80%BB%E7%BB%93%E5%87%BA%E4%BB%A5%E4%B8%8B%E5%87%A0%E7%82%B9%E8%A1%80%E7%9A%84%E6%95%99%E8%AE%AD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/history.jpg">
+      <meta itemprop="name" content="Kelvin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="猿创日记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/31/%E4%B8%80%E6%AC%A1%E4%B8%8A%E7%BA%BF%E7%BF%BB%E8%BD%A6%E8%AE%A9%E6%88%91%E6%80%BB%E7%BB%93%E5%87%BA%E4%BB%A5%E4%B8%8B%E5%87%A0%E7%82%B9%E8%A1%80%E7%9A%84%E6%95%99%E8%AE%AD/" class="post-title-link" itemprop="url">一次上线翻车让我总结出以下几点血的教训</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-31 09:21:07 / 修改时间：09:27:17" itemprop="dateCreated datePublished" datetime="2021-08-31T09:21:07+08:00">2021-08-31</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>从17点准备上线，直到1点最终上线成功，整整耗费8个小时。通过这次上线翻车，总结了以下几点血的教训。</p>
+<h2 id="基础设施差"><a href="#基础设施差" class="headerlink" title="基础设施差"></a>基础设施差</h2><p>导致上线失败的有两点，但是真的是很基础的东西。</p>
+<h3 id="环境配置混乱"><a href="#环境配置混乱" class="headerlink" title="环境配置混乱"></a>环境配置混乱</h3><p>客户端在做渠道环境配置时混乱，基础网络能力采用了一个动态域名配置项，某一个业务模块又采用了另一个动态域名配置项。在研发过程中始终使用测试环境域名，没有按照配置项来去正确引用域名。等到版本发布后才发现引用域名错误，慌慌张张修改配置，战战兢兢回想是否还存在其他配置项。</p>
+<p>这个低级错误完全可以避免：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/31/%E4%B8%80%E6%AC%A1%E4%B8%8A%E7%BA%BF%E7%BF%BB%E8%BD%A6%E8%AE%A9%E6%88%91%E6%80%BB%E7%BB%93%E5%87%BA%E4%BB%A5%E4%B8%8B%E5%87%A0%E7%82%B9%E8%A1%80%E7%9A%84%E6%95%99%E8%AE%AD/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2021/08/28/%E6%94%AF%E4%BB%98%E5%AE%9D%E9%87%8C%E7%9A%84%E9%92%B1%E8%A6%81%E5%8F%96%E5%87%BA%E6%9D%A5%E5%90%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -173,10 +257,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-08-28 22:04:13 / 修改时间：22:23:06" itemprop="dateCreated datePublished" datetime="2021-08-28T22:04:13+08:00">2021-08-28</time>
+              <time title="创建时间：2021-08-28 22:04:13" itemprop="dateCreated datePublished" datetime="2021-08-28T22:04:13+08:00">2021-08-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-31 09:25:49" itemprop="dateModified" datetime="2021-08-31T09:25:49+08:00">2021-08-31</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -437,7 +527,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-28 22:13:35" itemprop="dateModified" datetime="2021-08-28T22:13:35+08:00">2021-08-28</time>
+                <time title="修改时间：2021-08-31 09:25:49" itemprop="dateModified" datetime="2021-08-31T09:25:49+08:00">2021-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -913,92 +1003,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2019/01/30/%E5%88%A9%E7%94%A8Xcode%E4%BF%AE%E6%94%B9iPhone%E5%AE%9A%E4%BD%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/history.jpg">
-      <meta itemprop="name" content="Kelvin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="猿创日记">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/01/30/%E5%88%A9%E7%94%A8Xcode%E4%BF%AE%E6%94%B9iPhone%E5%AE%9A%E4%BD%8D/" class="post-title-link" itemprop="url">利用Xcode修改iPhone定位</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-01-30 20:28:52" itemprop="dateCreated datePublished" datetime="2019-01-30T20:28:52+08:00">2019-01-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-27 21:34:42" itemprop="dateModified" datetime="2021-08-27T21:34:42+08:00">2021-08-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <img src="/images/blog/%E5%88%A9%E7%94%A8Xcode%E4%BF%AE%E6%94%B9iPhone%E5%AE%9A%E4%BD%8D/cover.jpg" class="">
-
-<p>图片来自 泼辣有图 By sleepyeyes</p>
-<blockquote>
-<p>写这个话题，自然让人想到会利用这个技术去做一些不是很明亮的事情<del>哈哈，这个不在我们今天的讨论之中，我只提供一些技术，如有任何后果，我不承担任何责任</del></p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/01/30/%E5%88%A9%E7%94%A8Xcode%E4%BF%AE%E6%94%B9iPhone%E5%AE%9A%E4%BD%8D/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1068,18 +1072,21 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">61</span>
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">62</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
+          
         <span class="site-state-item-count">59</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
