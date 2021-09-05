@@ -2,7 +2,7 @@
 title: iOS下更改系统音量
 date: 2017-09-30 21:29:38
 tags: [音量, MPVolumeView]
-categories: 小飞鱼
+categories: iOS
 ---
 
 `iOS`中，如果想更改系统音量，只有2个方法，一是使用私有方法；二是使用`MPVolumeView`。

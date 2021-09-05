@@ -4,7 +4,7 @@ date: 2015-09-25 08:11:54 +0800
 tags: 
     - CocoaPods
 categories:
-    - 杂谈
+    - iOS
 ---
 
 

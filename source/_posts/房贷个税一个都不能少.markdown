@@ -3,7 +3,8 @@ layout: post
 title: "房贷个税一个都不能少"
 date: 2015-06-12 15:14:31 +0800
 categories:
-	- 杂谈
+	- 日记
+tags: [计算器]
 
 ---
 

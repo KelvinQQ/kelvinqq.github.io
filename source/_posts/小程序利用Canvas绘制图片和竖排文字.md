@@ -1,7 +1,8 @@
 ---
 title: 小程序利用Canvas绘制图片和竖排文字
 date: 2018-05-14 21:53:44
-tags: 小程序, Canvas
+tags: [小程序, Canvas]
+categories: [小程序]
 ---
 
 # 引言
