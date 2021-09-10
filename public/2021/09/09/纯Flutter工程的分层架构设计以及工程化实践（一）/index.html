@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"kelvinqq.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="一家之言，勿喷。若有更好方案，欢迎共享。  前言关于 Flutter 的教程已经有很多了，也有很多优秀的开源项目，这在一定程度上也增加了社区的活跃度。同时也有很多商业项目在实践，不过多数是将Flutter工程作为一个module来嵌入原生工程。官方有对应的教程来指导相关的工程化，网上的教程也很多。 但是一个纯 Flutter 工程的分层架构设计以及工程化的教程并不是很多。恰巧最近有个项目需要基于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="纯Flutter工程的分层架构设计以及工程化实践（一）">
+<meta property="og:url" content="https://kelvinqq.github.io/2021/09/09/%E7%BA%AFFlutter%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%88%86%E5%B1%82%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%BB%A5%E5%8F%8A%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:site_name" content="猿创日记">
+<meta property="og:description" content="一家之言，勿喷。若有更好方案，欢迎共享。  前言关于 Flutter 的教程已经有很多了，也有很多优秀的开源项目，这在一定程度上也增加了社区的活跃度。同时也有很多商业项目在实践，不过多数是将Flutter工程作为一个module来嵌入原生工程。官方有对应的教程来指导相关的工程化，网上的教程也很多。 但是一个纯 Flutter 工程的分层架构设计以及工程化的教程并不是很多。恰巧最近有个项目需要基于">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kelvinqq.github.io/images/blog/%E7%8C%BF%E5%88%9B%E6%97%A5%E8%AE%B0/210909/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%88%86%E5%B1%82.png">
+<meta property="og:image" content="https://kelvinqq.github.io/images/blog/%E7%8C%BF%E5%88%9B%E6%97%A5%E8%AE%B0/210909/flutter%E5%88%86%E5%B1%82.png">
+<meta property="og:image" content="https://kelvinqq.github.io/images/blog/%E7%8C%BF%E5%88%9B%E6%97%A5%E8%AE%B0/210909/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png">
+<meta property="article:published_time" content="2021-09-09T13:01:11.000Z">
+<meta property="article:modified_time" content="2021-09-09T13:08:04.324Z">
+<meta property="article:author" content="Kelvin">
+<meta property="article:tag" content="组件化">
+<meta property="article:tag" content="工程化">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kelvinqq.github.io/images/blog/%E7%8C%BF%E5%88%9B%E6%97%A5%E8%AE%B0/210909/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%88%86%E5%B1%82.png">
+
+<link rel="canonical" href="https://kelvinqq.github.io/2021/09/09/%E7%BA%AFFlutter%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%88%86%E5%B1%82%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%BB%A5%E5%8F%8A%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>纯Flutter工程的分层架构设计以及工程化实践（一） | 猿创日记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">猿创日记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/KelvinQQ" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kelvinqq.github.io/2021/09/09/%E7%BA%AFFlutter%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%88%86%E5%B1%82%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%BB%A5%E5%8F%8A%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/history.jpg">
+      <meta itemprop="name" content="Kelvin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="猿创日记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          纯Flutter工程的分层架构设计以及工程化实践（一）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-09-09 21:01:11 / 修改时间：21:08:04" itemprop="dateCreated datePublished" datetime="2021-09-09T21:01:11+08:00">2021-09-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Flutter/" itemprop="url" rel="index"><span itemprop="name">Flutter</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>一家之言，勿喷。若有更好方案，欢迎共享。</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>关于 <code>Flutter</code> 的教程已经有很多了，也有很多优秀的开源项目，这在一定程度上也增加了社区的活跃度。同时也有很多商业项目在实践，不过多数是将<code>Flutter</code>工程作为一个<code>module</code>来嵌入原生工程。官方有对应的教程来指导相关的工程化，网上的教程也很多。</p>
+<p>但是一个纯 <code>Flutter</code> 工程的分层架构设计以及工程化的教程并不是很多。恰巧最近有个项目需要基于 <code>Flutter</code> 工程来搭建，对分层设计以及相应的工程化做了一些思考和调研，此仓库的目的即在于记录方案，与大家分享。</p>
+<span id="more"></span>
+
+<h2 id="分层设计"><a href="#分层设计" class="headerlink" title="分层设计"></a>分层设计</h2><p>分层设计和目前成熟的移动端的分层设计差不多，都是根据基础能力和业务模块对 <code>App</code> 进行分层以及组件划分，从而达到组件化的目的。<br>例如下图是一个很常见的移动端分层设计。</p>
+<img src="/images/blog/%E7%8C%BF%E5%88%9B%E6%97%A5%E8%AE%B0/210909/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%88%86%E5%B1%82.png" class="">
+
+<p>将与业务无关的基础能力剥离出来，沉淀到最底层，上层的业务都会基于这些能力去构建；中间划出一个业务能力层，多数是一些弱业务逻辑的模块，像分享、支付这样的能力；然后是业务模块，这些基本上就是用户可感知的界面以及业务逻辑了；最后是宿主<code>App</code>。基于这样的分层设计，宿主<code>App</code>一般都是个壳工程。</p>
+<p>针对这样的设计，相应的组件间通信方案、工程化方案都已经很成熟，而且可选方案也很多。这里不再赘述，感兴趣的可以自行<code>Google</code>。</p>
+<p>所以我们的<code>Flutter</code>应该也是可以按照这样的分层去设计，但是由于<code>Flutter</code>开发中可能会遇到需要原生提供能力的场景，这样就会有一部分能力是基于原生能力封装的插件，但总的分层设计还是类似的。例如下图的分层设计：</p>
+<img src="/images/blog/%E7%8C%BF%E5%88%9B%E6%97%A5%E8%AE%B0/210909/flutter%E5%88%86%E5%B1%82.png" class="">
+
+<h2 id="工程化实践"><a href="#工程化实践" class="headerlink" title="工程化实践"></a>工程化实践</h2><p>目前网络上关于这一块的讨论比较少，如果你有看到相关的文章，欢迎共享。鉴于组内<code>iOS</code>的小伙伴是使用<code>VSCode</code>来开发的，所以工程化实践也是基于<code>VSCode</code>来操作的，不过这个应该影响不大。</p>
+<h3 id="模板工程介绍"><a href="#模板工程介绍" class="headerlink" title="模板工程介绍"></a>模板工程介绍</h3><p>我们先了解一下<code>Flutter</code>为我们提供的<code>4</code>中模板工程：<code>App、Module、Plugin、Package</code>。</p>
+<ol>
+<li><code>App</code></li>
+</ol>
+<p>我们一般都是创建一个<code>App</code>工程，这个模板工程会有<code>android</code>、<code>ios</code>目录，对应存放的是两个平台的工程。</p>
+<ol start="2">
+<li><code>Module</code></li>
+</ol>
+<p>使用这个模板创建出来的工程，会有<code>.android</code>、<code>.ios</code>目录，从模板的名称可以猜到应该是作为<code>Module</code>来使用的，官方对于这个模板的应用场景是将<code>Flutter</code>作为原生的一个子<code>Module</code>。这个模板创建的时候也会有<code>main.dart</code>文件，可以单独运行在你的设备上。</p>
+<ol start="3">
+<li><code>Plugin</code></li>
+</ol>
+<p>如果你需要封装基于原生能力的插件，就需要用到这个模板。</p>
+<ol start="4">
+<li><code>Package</code></li>
+</ol>
+<p>这是一个纯<code>Flutter</code>模块，没有<code>android</code>、<code>ios</code>目录。</p>
+<h3 id="pubspec-yaml-配置介绍"><a href="#pubspec-yaml-配置介绍" class="headerlink" title="pubspec.yaml 配置介绍"></a><code>pubspec.yaml</code> 配置介绍</h3><p>看过<code>Flutter</code>教程的应该都了解，如果我们需要引用一些第三方库，就可以在这里配置，一般我们配置的都是发布在 <code>pub.dev</code> 上的开源项目。但其实，除了可以直接依赖<code>pub.dev</code>，他还支持本地依赖，<code>git</code> 仓库依赖。你可以这样操作：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dependencies:</span><br><span class="line">  plugin1:</span><br><span class="line">    git:</span><br><span class="line">      url: &quot;git://github.com/flutter/plugin1.git&quot;</span><br><span class="line">  fish_redux:</span><br><span class="line">    path: my_package/fish_redux-0.3.1</span><br></pre></td></tr></table></figure>
+
+<p>另外<code>git</code>依赖还支持指定<code>branch</code>，指定子目录等。</p>
+<p>好了，铺垫了这么多，是时候介绍我们的工程化方案了。</p>
+<h3 id="具体方案"><a href="#具体方案" class="headerlink" title="具体方案"></a>具体方案</h3><p>鉴于目前还处于初步实践阶段，所以并没有将各个组件上传到<code>git</code>仓库，而是采用基于本地依赖的方式。因为各个组件可能会频繁变动，就会不停的切换工程等。等后期稳定后，可以采用<code>git</code>依赖的方式，达到供多个<code>App</code>使用的目的。</p>
+<p>先来看一下整个工程的目录结构，如果你有一定的分层设计经验，应该很容易理解这个目录结构的设计。</p>
+<img src="/images/blog/%E7%8C%BF%E5%88%9B%E6%97%A5%E8%AE%B0/210909/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png" class="">
+
+<p><code>HostApp</code> ：壳工程目录<br><code>BusinessModule</code> ：业务模块目录<br><code>BusinessLib</code>：业务能力目录，里面还有个二级的<code>UI</code>目录，存放一些和业务相关的公共<code>UI</code>组件<br><code>CommonLib</code>    ：基础能力目录</p>
+<p>按照上面的思路，我们首先需要一个壳工程，我们使用<code>VSCode</code>新建一个<code>App</code>工程，这里放在<code>HostApp</code>目录下。</p>
+<p>接着我们在<code>BusinessModule</code>中新建四个业务模块工程，这次我们不再新建<code>App</code>工程，而是新建<code>Module</code>工程。我这边新建了<code>module_home</code>、<code>module_user</code>、<code>module_task</code>、<code>module_setting</code>四个工程。</p>
+<p>同样，我们在<code>BusinessLib</code>中也新建几个工程，供测试使用，这里新建了<code>lib_account</code>、<code>lib_push</code>、<code>lib_share</code>，然后在<code>UI</code>目录中新建了<code>lib_alert</code>、<code>lib_banner</code>、<code>lib_loading</code>。在<code>CommonLib</code>新建<code>lib_database</code>、<code>lib_log</code>、<code>lib_network</code>。其中<code>lib_account</code>、<code>lib_database</code>、<code>lib_network</code>是<code>Package</code>工程，<code>lib_push</code>、<code>lib_share</code>、<code>lib_alert</code>、<code>lib_banner</code>、<code>lib_loading</code>是<code>Module</code>工程，<code>lib_log</code>是<code>Plugin</code>工程。大家根据自己的实际场景去新建对应的模板工程。</p>
+<p>这样所有的工程都放在对应的目录，为了方便管理，我们新建一个<code>workspace</code>来管理所有的工程。具体可以这样操作：</p>
+<ol>
+<li>在<code>VSCode</code>中<code>New Window</code></li>
+<li><code>Add Folder to Workspace...</code>，选择我们的根目录</li>
+<li><code>Save Workspace As...</code>，保存到我们的根目录</li>
+</ol>
+<p>下次可以直接打开我们的<code>workspace</code>文件。</p>
+<p>现在打开<code>host_app</code>工程的<code>pubspec.yaml</code>做如下配置，将<code>BusinessModule</code>中的组件引入进来。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">dependencies:</span><br><span class="line">  module_home:</span><br><span class="line">    path: ../../BusinessModule/module_home</span><br><span class="line">  module_user:</span><br><span class="line">    path: ../../BusinessModule/module_user</span><br><span class="line">  module_setting:</span><br><span class="line">    path: ../../BusinessModule/module_setting</span><br><span class="line">  module_task:</span><br><span class="line">    path: ../../BusinessModule/module_task</span><br></pre></td></tr></table></figure>
+
+<p>保存后运行<code>flutter pub get</code>。</p>
+<blockquote>
+<p>这里有个小问题，就是使用<code>workspace</code>后，在<code>host_app</code>里面去引用<code>module_home</code>内定义的页面，没有代码提示，但是手动<code>import</code>后，编译都正常。不知道是<code>Bug</code>还是我使用的有问题。</p>
+</blockquote>
+<p>我们在<code>module_home</code>、<code>module_user</code>、<code>module_setting</code>、<code>module_task</code>中各新建一个页面，<code>HomePage</code>、<code>UserPage</code>、<code>SettingPage</code>、<code>TaskPage</code>。</p>
+<p>我们在<code>host_app</code>的入口构建一个<code>Tab</code>页面，将我们的<code>HomePage</code>、<code>UserPage</code>作为两个<code>Tab</code>加载进来。试着运行一下，感觉良好。</p>
+<p>哇哦，基本的框架已经搭建出来了，虽然后续需要处理的事情还有很多，例如组件间的页面如何跳转、组件间如何通信，都需要有对应的方案实现。</p>
+<p>且等我继续调研实践。</p>
+<p>对应的<code>Demo</code>工程已经上传<a target="_blank" rel="noopener" href="https://github.com/KelvinQQ/FlutterComponent"><code>GitHub</code></a>。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/weixin_pay.jpg" alt="Kelvin 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/ali_pay.jpg" alt="Kelvin 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/weixin_blog.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">公众号</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/" rel="tag"># 组件化</a>
+              <a href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" rel="tag"># 工程化</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/05/%E8%81%8A%E4%B8%AA%E6%9C%80%E8%BF%91%E4%BD%93%E6%A3%80%E7%9A%84%E4%BA%8B%E6%83%85%EF%BC%88%E4%B8%80%EF%BC%89/" rel="prev" title="聊个最近体检的事情（一）">
+      <i class="fa fa-chevron-left"></i> 聊个最近体检的事情（一）
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B1%82%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text">分层设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E8%B7%B5"><span class="nav-number">3.</span> <span class="nav-text">工程化实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E5%B7%A5%E7%A8%8B%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.1.</span> <span class="nav-text">模板工程介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pubspec-yaml-%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.2.</span> <span class="nav-text">pubspec.yaml 配置介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%96%B9%E6%A1%88"><span class="nav-number">3.3.</span> <span class="nav-text">具体方案</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kelvin"
+      src="/images/history.jpg">
+  <p class="site-author-name" itemprop="name">Kelvin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">64</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/KelvinQQ" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KelvinQQ" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:history_zq@163.com" title="E-Mail → mailto:history_zq@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kelvin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
