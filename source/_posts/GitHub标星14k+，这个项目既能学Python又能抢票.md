@@ -2,7 +2,7 @@
 title: GitHub标星14k+，这个项目既能学Python又能抢票
 date: 2019-09-18 19:32:39
 categories:
-    - 源码
+    - 源码推荐
 tags: 
     - Github
 
